@@ -7,12 +7,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* Prevent automatic text scaling */
+    text-size-adjust: 100%;
+    font-size: 16px; /* Set a base font size explicitly */
   }
   
   body {
     color: #F9FAFB;
     background-color: #111827;
     background-image: linear-gradient(to bottom right, #111827, #1F2937);
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -24,9 +28,48 @@
   a {
     transition: all 0.2s;
   }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @layer components {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+
   .btn-primary {
     background-color: #FF8C00;
     color: white;

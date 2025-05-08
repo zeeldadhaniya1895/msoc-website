@@ -171,7 +171,13 @@ const SunsetBackground = () => {
     <div className="fixed inset-0 -z-10 bg-gradient-to-b from-slate-900 via-orange-900 to-amber-900">
       {/* Dark semi-transparent overlay to improve text contrast */}
       <div className="absolute inset-0 bg-black/40"></div>
-      <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+      <Canvas 
+        camera={{ position: [0, 0, 5], fov: 60 }} 
+        dpr={[1, 2]} 
+        performance={{ min: 0.5 }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+        resize={{ scroll: false }}
+      >
         <Scene />
       </Canvas>
     </div>

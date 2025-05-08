@@ -4,6 +4,7 @@ import SunsetBackground from '../components/3d/SunsetBackground';
 import { categories } from '../data/eventData';
 import { useRef } from 'react';
 import HomeTimeline from '../components/HomeTimeline';
+import EventSlideshow from '../components/EventSlideshow';
 
 const HomePage = () => {
   const timelineRef = useRef(null);
@@ -60,7 +61,13 @@ const HomePage = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="hidden lg:block"
             >
-              <img src="/mstc_logo.png" alt="MSOC 5" className="w-full max-w-md mx-auto" />
+              <div className="w-full max-w-[450px] mx-auto relative overflow-visible p-2">
+                <div className="w-full relative overflow-visible rounded-xl bg-gradient-to-br from-primary/20 via-transparent to-summer-yellow/30 p-3 backdrop-blur-sm shadow-xl shadow-primary/20">
+                  {/* Slideshow Component */}
+                  <EventSlideshow />
+                </div>
+                <div className="absolute -bottom-4 left-0 right-0 h-16"></div>
+              </div>
             </motion.div>
           </div>
         </div>
