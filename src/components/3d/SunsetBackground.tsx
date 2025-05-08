@@ -1,14 +1,30 @@
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars, Float } from '@react-three/drei';
+import * as THREE from 'three';
+
+interface SphereProps {
+  position: [number, number, number];
+  size: number;
+  color: string;
+  speed: number;
+}
+
+interface StarProps {
+  position: [number, number, number];
+  size: number;
+  color: string;
+}
 
 // Glowing spheres component
-function GlowingSphere({ position, size, color, speed }) {
-  const ref = useRef();
+function GlowingSphere({ position, size, color, speed }: SphereProps) {
+  const ref = useRef<THREE.Mesh>(null);
   
   useFrame((state) => {
-    ref.current.position.y = Math.sin(state.clock.getElapsedTime() * speed) * 0.5;
-    ref.current.rotation.z = state.clock.getElapsedTime() * 0.5;
+    if (ref.current) {
+      ref.current.position.y = Math.sin(state.clock.getElapsedTime() * speed) * 0.5;
+      ref.current.rotation.z = state.clock.getElapsedTime() * 0.5;
+    }
   });
 
   return (
@@ -32,14 +48,16 @@ function GlowingSphere({ position, size, color, speed }) {
 }
 
 // Subtle moving particles
-function MovingParticle({ position, size, color, speed }) {
-  const ref = useRef();
+function MovingParticle({ position, size, color, speed }: SphereProps) {
+  const ref = useRef<THREE.Mesh>(null);
   
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    ref.current.position.x = position[0] + Math.sin(t * speed) * 1.5;
-    ref.current.position.y = position[1] + Math.cos(t * speed * 0.7) * 1.2;
-    ref.current.position.z = position[2] + Math.cos(t * speed * 0.5) * 1;
+    if (ref.current) {
+      ref.current.position.x = position[0] + Math.sin(t * speed) * 1.5;
+      ref.current.position.y = position[1] + Math.cos(t * speed * 0.7) * 1.2;
+      ref.current.position.z = position[2] + Math.cos(t * speed * 0.5) * 1;
+    }
   });
 
   return (
@@ -51,19 +69,22 @@ function MovingParticle({ position, size, color, speed }) {
 }
 
 // Distant stars that twinkle
-function TwinklingStar({ position, size, color }) {
-  const ref = useRef();
+function TwinklingStar({ position, size, color }: StarProps) {
+  const ref = useRef<THREE.Mesh>(null);
   
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    // Subtle opacity pulsing for twinkling effect
-    ref.current.material.opacity = 0.4 + Math.sin(t * (1 + Math.random())) * 0.2;
+    if (ref.current) {
+      // Subtle pulsing effect
+      ref.current.scale.x = ref.current.scale.y = ref.current.scale.z = 
+        size * (1 + Math.sin(t * Math.random() * 2) * 0.2);
+    }
   });
 
   return (
     <mesh position={position} ref={ref}>
-      <planeGeometry args={[size, size]} />
-      <meshBasicMaterial color={color} transparent opacity={0.6} />
+      <sphereGeometry args={[size, 8, 8]} />
+      <meshBasicMaterial color={color} transparent opacity={0.8} />
     </mesh>
   );
 }

@@ -34,9 +34,9 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
-              <img src="/vite.svg" alt="MSTC Logo" className="h-7" />
-            </div>
+            {/* <div className="w-[4rem] h-14 bg-gradient-primary rounded-xl flex items-center justify-center"> */}
+              <img src="/mstc_logo.png" alt="MSTC Logo" className="h-[4rem] w-[4rem] object-contain" />
+            {/* </div> */}
             <div>
               <h1 className="font-display font-bold gradient-text text-xl">MSOC</h1>
               <p className="text-xs text-gray-300">MSTC Summer of Code</p>
@@ -75,13 +75,7 @@ const Navbar = () => {
             <Link to="/about" className="nav-link">About</Link>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <Link to="/register" className="btn-primary">Register Now</Link>
-          </motion.div>
+          <Link to="/register" className="btn-primary">Register Now</Link>
         </div>
 
         {/* Mobile Menu Button */}

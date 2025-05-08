@@ -17,7 +17,7 @@ const AboutPage = () => {
             transition={{ duration: 0.5 }}
             className="section-title text-center gradient-text"
           >
-            About MSOC 2023
+            About MSOC 2025
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -222,7 +222,7 @@ const AboutPage = () => {
             className="card max-w-3xl mx-auto text-center fade-in-up"
           >
             <div className="flex justify-center mb-6">
-              <img src="/vite.svg" alt="MSTC Logo" className="h-16 summer-icon" />
+              <img src="/mstc_logo.png" alt="MSTC Logo" className="h-16 summer-icon" />
             </div>
             
             <p className="text-white/80 mb-4">

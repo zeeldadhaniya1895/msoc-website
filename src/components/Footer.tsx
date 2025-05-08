@@ -34,7 +34,7 @@ const Footer = () => {
           <motion.div variants={item} className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
-                <img src="/vite.svg" alt="MSTC Logo" className="h-7" />
+                <img src="/mstc_logo.png" alt="MSTC Logo" className="h-7" />
               </div>
               <div>
                 <h3 className="font-display font-bold gradient-text text-xl">MSTC</h3>

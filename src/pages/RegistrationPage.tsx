@@ -21,7 +21,7 @@ const RegistrationPage = () => {
   
   const mainTracks = categories.filter(category => category.isMainTrack);
   
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -29,7 +29,7 @@ const RegistrationPage = () => {
     }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
@@ -68,7 +68,7 @@ const RegistrationPage = () => {
             transition={{ duration: 0.5 }}
             className="section-title text-center gradient-text"
           >
-            <span className="summer-icon">📝</span> Register for MSOC 2023
+            <span className="summer-icon">📝</span> Register for MSOC 2025
           </motion.h1>
           
           <motion.p
@@ -93,7 +93,7 @@ const RegistrationPage = () => {
                     Registration Successful!
                   </h2>
                   <p className="text-white/70 mb-6">
-                    Thank you for registering for MSOC 2023. We have sent you a confirmation email with further details. Also, make sure to join our Discord server for updates!
+                    Thank you for registering for MSOC 2025. We have sent you a confirmation email with further details. Also, make sure to join our Discord server for updates!
                   </p>
                   <a
                     href="https://discord.gg/mstc"

@@ -2,12 +2,12 @@ export const eventDetails = {
   name: "MSOC - MSTC Summer of Code",
   description: "A summer coding event organized by Microsoft Student Technical Club to help students learn and build projects in different technologies.",
   timeline: [
-    { date: "May 10, 2023", event: "Official Event Declaration" },
-    { date: "May 11, 2023", event: "Category Reveal & Registration Opens" },
-    { date: "May 15, 2023", event: "Event Begins - Learning Phase Starts" },
-    { date: "June 30, 2023", event: "Learning Phase Ends" },
-    { date: "July 1, 2023", event: "Development Phase Begins" },
-    { date: "July 21, 2023", event: "Development Phase Ends & Final Evaluation" }
+    { date: "May 10, 2025", event: "Official Event Declaration" },
+    { date: "May 11, 2025", event: "Category Reveal & Registration Opens" },
+    { date: "May 15, 2025", event: "Event Begins - Learning Phase Starts" },
+    { date: "June 30, 2025", event: "Learning Phase Ends" },
+    { date: "July 1, 2025", event: "Development Phase Begins" },
+    { date: "July 21, 2025", event: "Development Phase Ends & Final Evaluation" }
   ],
   duration: {
     total: "Around 9 weeks",
@@ -140,7 +140,7 @@ export const participationTypes = [
 export const faqs = [
   {
     question: "How do I register for MSOC?",
-    answer: "Registration will open on May 11, 2023. You can register through this website and join our Discord server for updates."
+    answer: "Registration will open on May 11, 2025. You can register through this website and join our Discord server for updates."
   },
   {
     question: "Do I need prior experience to participate?",

@@ -322,5 +322,36 @@
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+
+  /* Animated Gradient Text */
+  .animated-gradient-text {
+    background: linear-gradient(
+      to right,
+      #ff8c00,    /* Summer Orange */
+      #ffd700,    /* Gold */
+      #ff6347,    /* Tomato Orange */
+      #ff4500,    /* Deep Orange */
+      #ff8c00     /* Back to Summer Orange */
+    );
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: horizontal-gradient 3s linear infinite;
+    font-weight: bold;
+  }
+
+  @keyframes horizontal-gradient {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .glow-effect {
+    text-shadow: none;
+  }
 }
 

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import SunsetBackground from '../components/3d/SunsetBackground';
-import MiniGame from '../components/MiniGame';
-import { categories, eventDetails } from '../data/eventData';
+import { categories } from '../data/eventData';
 import { useRef } from 'react';
 import HomeTimeline from '../components/HomeTimeline';
 
@@ -12,9 +11,6 @@ const HomePage = () => {
     target: timelineRef,
     offset: ["start end", "end end"]
   });
-  
-  const sunY = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const sunOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0]);
   
   return (
     <div className="relative overflow-x-hidden">
@@ -30,8 +26,8 @@ const HomePage = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="text-summer-yellow">MSOC</span>
-                <span className="block text-white">Summer of Code 2023</span>
+                <span className="animated-gradient-text">MSOC</span>
+                <span className="block text-white">MSTC-Summer of Code 2025</span>
               </h1>
               <p className="text-xl mt-6 text-white/80 max-w-2xl">
                 Join <span className="mstc-highlight">Microsoft Student Technical Club's</span> summer coding event to learn, build, and showcase your skills with MERN Stack and GenAI technologies.
@@ -49,7 +45,7 @@ const HomePage = () => {
               <div className="flex flex-wrap gap-4 items-center mt-8">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-summer-yellow"></div>
-                  <span>Event Begins: <span className="summer-icon">🔥</span> May 15, 2023</span>
+                  <span>Event Begins: <span className="summer-icon">🔥</span> May 15, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-summer-orange"></div>
@@ -64,7 +60,7 @@ const HomePage = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="hidden lg:block"
             >
-              <img src="/vite.svg" alt="MSOC 2023" className="w-full max-w-md mx-auto" />
+              <img src="/mstc_logo.png" alt="MSOC 5" className="w-full max-w-md mx-auto" />
             </motion.div>
           </div>
         </div>
@@ -149,33 +145,6 @@ const HomePage = () => {
       
       {/* Timeline Section with HomeTimeline component */}
       <HomeTimeline />
-      
-      {/* Mini Game Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="section-title text-center gradient-text"
-          >
-            <span className="summer-icon">🎮</span> Take a Fun Break!
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-lg text-white/70 max-w-2xl mx-auto text-center mb-8"
-          >
-            Challenge yourself with our quick summer-themed mini-game.
-          </motion.p>
-          
-          <MiniGame />
-        </div>
-      </section>
       
       {/* CTA Section */}
       <section className="py-20">

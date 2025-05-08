@@ -1,14 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
+interface Target {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  color: string;
+}
+
 const MiniGame = () => {
   const [score, setScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
-  const [targets, setTargets] = useState([]);
+  const [targets, setTargets] = useState<Target[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
-  const gameAreaRef = useRef(null);
-  const timerRef = useRef(null);
+  const gameAreaRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<number | null>(null);
 
   const colors = ['#FFD700', '#FF8C00', '#1E90FF', '#0078D4'];
 
@@ -20,14 +28,20 @@ const MiniGame = () => {
     setTargets([]);
     
     // Create initial targets
-    createTarget();
-    createTarget();
+    setTimeout(() => {
+      if (gameAreaRef.current) {
+        createTarget();
+        createTarget();
+      }
+    }, 100);
     
     // Start the timer
     timerRef.current = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
-          clearInterval(timerRef.current);
+          if (timerRef.current) {
+            clearInterval(timerRef.current);
+          }
           setGameOver(true);
           return 0;
         }
@@ -42,28 +56,30 @@ const MiniGame = () => {
     const { width, height } = gameAreaRef.current.getBoundingClientRect();
     
     // Generate random position within game area
-    const x = Math.random() * (width - 60);
-    const y = Math.random() * (height - 60);
+    // Keep 20px padding from all sides to avoid targets going out of bounds
+    const targetSize = Math.floor(Math.random() * 30) + 30;
+    const maxX = width - targetSize - 20;
+    const maxY = height - targetSize - 20;
     
-    // Generate random size between 30 and 60px
-    const size = Math.floor(Math.random() * 30) + 30;
+    const x = Math.max(20, Math.random() * maxX);
+    const y = Math.max(20, Math.random() * maxY);
     
     // Generate random color
     const color = colors[Math.floor(Math.random() * colors.length)];
     
     // Create new target
-    const newTarget = {
-      id: Date.now(),
+    const newTarget: Target = {
+      id: Date.now() + Math.random(), // Ensure unique ID
       x,
       y,
-      size,
+      size: targetSize,
       color,
     };
     
     setTargets(prev => [...prev, newTarget]);
   };
 
-  const handleTargetClick = (id) => {
+  const handleTargetClick = (id: number) => {
     // Remove clicked target
     setTargets(prev => prev.filter(target => target.id !== id));
     
