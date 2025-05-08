@@ -2,9 +2,34 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SunsetBackground from '../components/3d/SunsetBackground';
 import { categories } from '../data/eventData';
+import { toast } from 'react-hot-toast';
+import useAPI from '../hooks/useAPI';
+import { isValidEmail, isValidName } from '../utils/validation';
+import { getFormattedTimestamp } from '../utils/formatters';
+
+interface FormData {
+  fullName: string;
+  email: string;
+  college: string;
+  year: string;
+  discord: string;
+  category: string;
+  experience: string;
+  expectations: string;
+}
+
+interface APIError {
+  response?: {
+    data?: {
+      message?: string;
+    };
+  };
+}
 
 const RegistrationPage = () => {
-  const [formData, setFormData] = useState({
+  const { POST } = useAPI();
+  
+  const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
     college: '',
@@ -16,44 +41,86 @@ const RegistrationPage = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState('');
+  const [isJustVerify, setIsJustVerify] = useState(false);
   
   const mainTracks = categories.filter(category => category.isMainTrack);
   
+  const isFormValid = () => {
+    return (
+      formData.fullName.trim() !== '' &&
+      isValidEmail(formData.email) &&
+      formData.college.trim() !== '' &&
+      formData.year.trim() !== '' &&
+      formData.category !== ''
+    );
+  };
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    
+    // Add validation for specific fields
+    if (name === 'fullName' && !isValidName(value) && value.length > 0) {
+      return;
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsJustVerify(true);
+
+    if (!isFormValid()) {
+      toast.error('Please fill all required fields correctly');
+      return;
+    }
+
     setIsSubmitting(true);
-    setError('');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
+    const sheetsData = {
+      spreadsheetId: "1bMGUvmXFYPMxNRNAbHenvL0tlLaokELL4gDiuD3CCwo",
+      sheetName: "Sheet1",
+      data: [
+        formData.fullName.trim(),
+        formData.email,
+        formData.college.trim(),
+        formData.year,
+        formData.discord,
+        formData.category,
+        formData.experience.trim(),
+        formData.expectations.trim(),
+        getFormattedTimestamp(),
+      ],
+    };
+
+    try {
+      await POST("/data-services/store-data", sheetsData);
+      await POST("/mail-services/send-mail/register", formData);
       
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setIsSuccess(false);
-        setFormData({
-          fullName: '',
-          email: '',
-          college: '',
-          year: '',
-          discord: '',
-          category: '',
-          experience: '',
-          expectations: '',
-        });
-      }, 3000);
-    }, 1500);
+      toast.success('Registration successful!');
+      
+      // Reset form
+      setFormData({
+        fullName: '',
+        email: '',
+        college: '',
+        year: '',
+        discord: '',
+        category: '',
+        experience: '',
+        expectations: '',
+      });
+      setIsJustVerify(false);
+    } catch (error: unknown) {
+      console.error(error);
+      const apiError = error as APIError;
+      toast.error(apiError.response?.data?.message || 'Registration failed. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -82,7 +149,7 @@ const RegistrationPage = () => {
           
           <div className="max-w-3xl mx-auto">
             <div className="card">
-              {isSuccess ? (
+              {isJustVerify ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -112,12 +179,6 @@ const RegistrationPage = () => {
                   onSubmit={handleSubmit}
                   className="space-y-6 fade-in-up"
                 >
-                  {error && (
-                    <div className="bg-red-500/20 border border-red-500/50 text-white p-4 rounded-md">
-                      {error}
-                    </div>
-                  )}
-                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="fade-in-up stagger-1">
                       <label htmlFor="fullName" className="block text-white mb-2">
@@ -130,8 +191,15 @@ const RegistrationPage = () => {
                         value={formData.fullName}
                         onChange={handleChange}
                         required
-                        className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all"
+                        className={`w-full bg-white/10 border ${
+                          isJustVerify && !formData.fullName.trim() 
+                            ? 'border-red-500' 
+                            : 'border-white/20'
+                        } rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all`}
                       />
+                      {isJustVerify && !formData.fullName.trim() && (
+                        <p className="text-red-500 text-sm mt-1">Full name is required</p>
+                      )}
                     </div>
                     
                     <div className="fade-in-up stagger-2">
@@ -145,8 +213,19 @@ const RegistrationPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all"
+                        className={`w-full bg-white/10 border ${
+                          isJustVerify && !isValidEmail(formData.email)
+                            ? 'border-red-500'
+                            : 'border-white/20'
+                        } rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all`}
                       />
+                      {isJustVerify && !isValidEmail(formData.email) && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {formData.email.trim() === '' 
+                            ? 'Email is required' 
+                            : 'Please enter a valid email address'}
+                        </p>
+                      )}
                     </div>
                   </div>
                   
@@ -162,8 +241,15 @@ const RegistrationPage = () => {
                         value={formData.college}
                         onChange={handleChange}
                         required
-                        className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all"
+                        className={`w-full bg-white/10 border ${
+                          isJustVerify && !formData.college.trim()
+                            ? 'border-red-500'
+                            : 'border-white/20'
+                        } rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all`}
                       />
+                      {isJustVerify && !formData.college.trim() && (
+                        <p className="text-red-500 text-sm mt-1">College/University is required</p>
+                      )}
                     </div>
                     
                     <div className="fade-in-up stagger-4">
@@ -176,7 +262,11 @@ const RegistrationPage = () => {
                         value={formData.year}
                         onChange={handleChange}
                         required
-                        className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all"
+                        className={`w-full bg-white/10 border ${
+                          isJustVerify && !formData.year
+                            ? 'border-red-500'
+                            : 'border-white/20'
+                        } rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all`}
                       >
                         <option value="">Select Year</option>
                         <option value="1">1st Year <span className="summer-icon">🌱</span></option>
@@ -185,6 +275,9 @@ const RegistrationPage = () => {
                         <option value="4">4th Year <span className="summer-icon">🌳</span></option>
                         <option value="5+">5th Year or above <span className="summer-icon">🌴</span></option>
                       </select>
+                      {isJustVerify && !formData.year && (
+                        <p className="text-red-500 text-sm mt-1">Year of study is required</p>
+                      )}
                     </div>
                   </div>
                   
@@ -216,7 +309,11 @@ const RegistrationPage = () => {
                       value={formData.category}
                       onChange={handleChange}
                       required
-                      className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all"
+                      className={`w-full bg-white/10 border ${
+                        isJustVerify && !formData.category
+                          ? 'border-red-500'
+                          : 'border-white/20'
+                      } rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all`}
                     >
                       <option value="">Select Track</option>
                       {mainTracks.map(track => (
@@ -225,6 +322,9 @@ const RegistrationPage = () => {
                         </option>
                       ))}
                     </select>
+                    {isJustVerify && !formData.category && (
+                      <p className="text-red-500 text-sm mt-1">Please select a track</p>
+                    )}
                   </div>
                   
                   <div className="fade-in-up stagger-5">
