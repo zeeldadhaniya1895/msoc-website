@@ -9,11 +9,6 @@ const HomeTimeline = () => {
     offset: ["start end", "end end"]
   });
   
-  const sunY = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const sunScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.8]);
-  const sunOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.5]);
-  const sunRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  
   return (
     <section ref={timelineRef} className="py-20 bg-gradient-to-b from-transparent to-mstc-dark timeline-container relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-6">
@@ -26,34 +21,6 @@ const HomeTimeline = () => {
         >
           Event Timeline
         </motion.h2>
-        
-        {/* Animated Sun that follows timeline scroll */}
-        <motion.div 
-          className="fixed right-10 top-1/3 translate-y-0 z-10 pointer-events-none"
-          style={{ 
-            y: sunY,
-            scale: sunScale,
-            opacity: sunOpacity,
-            rotate: sunRotate
-          }}
-        >
-          <div className="relative w-20 h-20">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 animate-pulse"></div>
-            <div className="absolute inset-2 rounded-full bg-yellow-400"></div>
-            {/* Sun rays */}
-            {[...Array(8)].map((_, i) => (
-              <div 
-                key={i} 
-                className="absolute w-1 h-8 bg-yellow-400 left-1/2 top-1/2 -ml-0.5"
-                style={{ 
-                  transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateY(-12px)`,
-                  transformOrigin: 'bottom center',
-                  animation: `float ${1 + (i % 3) * 0.5}s ease-in-out infinite alternate`,
-                }}
-              ></div>
-            ))}
-          </div>
-        </motion.div>
         
         {/* Cloud decorations */}
         <motion.div 
