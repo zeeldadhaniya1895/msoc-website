@@ -98,7 +98,7 @@ const RegistrationPage = () => {
 
     try {
       await POST("/data-services/store-data", sheetsData);
-      await POST("/mail-services/send-mail/register", formData);
+      // await POST("/mail-services/send-mail/register", formData);
       
       toast.success('Registration successful!');
       
