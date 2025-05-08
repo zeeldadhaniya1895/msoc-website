@@ -4,7 +4,7 @@ import SunsetBackground from '../components/3d/SunsetBackground';
 import { categories } from '../data/eventData';
 import { toast } from 'react-hot-toast';
 import useAPI from '../hooks/useAPI';
-import { isValidEmail, isValidName } from '../utils/validation';
+import { isValidEmail, isValidName, isValidPhoneNumber } from '../utils/validation';
 import { getFormattedTimestamp } from '../utils/formatters';
 
 interface FormData {
@@ -13,6 +13,7 @@ interface FormData {
   college: string;
   year: string;
   discord: string;
+  phoneNumber: string;
   category: string;
   experience: string;
   expectations: string;
@@ -35,6 +36,7 @@ const RegistrationPage = () => {
     college: '',
     year: '',
     discord: '',
+    phoneNumber: '',
     category: '',
     experience: '',
     expectations: '',
@@ -51,6 +53,8 @@ const RegistrationPage = () => {
       isValidEmail(formData.email) &&
       formData.college.trim() !== '' &&
       formData.year.trim() !== '' &&
+      formData.phoneNumber.trim() !== '' &&
+      (formData.phoneNumber.trim() === '' || isValidPhoneNumber(formData.phoneNumber)) &&
       formData.category !== ''
     );
   };
@@ -61,6 +65,18 @@ const RegistrationPage = () => {
     // Add validation for specific fields
     if (name === 'fullName' && !isValidName(value) && value.length > 0) {
       return;
+    }
+    
+    if (name === 'phoneNumber' && value.length > 0) {
+      // Allow only digits in phone number field
+      if (!/^\d*$/.test(value)) {
+        return;
+      }
+      
+      // Limit to 10 digits
+      if (value.length > 10) {
+        return;
+      }
     }
     
     setFormData(prev => ({
@@ -89,6 +105,7 @@ const RegistrationPage = () => {
         formData.college.trim(),
         formData.year,
         formData.discord,
+        formData.phoneNumber,
         formData.category,
         formData.experience.trim(),
         formData.expectations.trim(),
@@ -98,7 +115,7 @@ const RegistrationPage = () => {
 
     try {
       await POST("/data-services/store-data", sheetsData);
-      // await POST("/mail-services/send-mail/register", formData);
+      await POST("/mail-services/send-mail/register", formData);
       
       toast.success('Registration successful!');
       
@@ -109,6 +126,7 @@ const RegistrationPage = () => {
         college: '',
         year: '',
         discord: '',
+        phoneNumber: '',
         category: '',
         experience: '',
         expectations: '',
@@ -300,6 +318,32 @@ const RegistrationPage = () => {
                   </div>
                   
                   <div className="fade-in-up stagger-4">
+                    <label htmlFor="phoneNumber" className="block text-white mb-2">
+                      Phone Number<span className="text-summer-orange">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                      required
+                      placeholder="e.g., 9876543210"
+                      className={`w-full bg-white/10 border ${
+                        isJustVerify && !formData.phoneNumber.trim()
+                          ? 'border-red-500'
+                          : 'border-white/20'
+                      } rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all`}
+                    />
+                    {isJustVerify && formData.phoneNumber.trim() !== '' && !isValidPhoneNumber(formData.phoneNumber) && (
+                      <p className="text-red-500 text-sm mt-1">Please enter a valid 10-digit phone number</p>
+                    )}
+                    {isJustVerify && !formData.phoneNumber.trim() && (
+                      <p className="text-red-500 text-sm mt-1">Phone number is required</p>
+                    )}
+                  </div>
+                  
+                  <div className="fade-in-up stagger-5">
                     <label htmlFor="category" className="block text-white mb-2">
                       Preferred Track<span className="text-summer-orange">*</span>
                     </label>

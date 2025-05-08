@@ -10,4 +10,9 @@ export function isValidName(name: string): boolean {
 
 export function isAllDigits(value: string): boolean {
   return /^\d+$/.test(value);
+}
+
+export function isValidPhoneNumber(phone: string): boolean {
+  const phoneRegex = /^[0-9]{10}$/;
+  return phoneRegex.test(phone);
 } 
