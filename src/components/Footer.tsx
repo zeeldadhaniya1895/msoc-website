@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-5">
               <a 
-                href="https://instagram.com/mstc" 
+                href="https://www.instagram.com/mstc_daiict?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-primary transition-colors transform hover:scale-110"
@@ -58,7 +58,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://twitter.com/mstc" 
+                href="https://x.com/mstc_daiict" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-primary transition-colors transform hover:scale-110"
@@ -68,7 +68,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://github.com/mstc" 
+                href="https://github.com/MSTC-DA-IICT" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-primary transition-colors transform hover:scale-110"
@@ -78,7 +78,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://discord.gg/mstc" 
+                href="https://discord.gg/pTennNV2" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-primary transition-colors transform hover:scale-110"
