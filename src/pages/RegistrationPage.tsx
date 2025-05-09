@@ -26,7 +26,7 @@ interface APIError {
     };
   };
 }
-
+ 
 const RegistrationPage = () => {
   const { POST } = useAPI();
   
