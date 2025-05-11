@@ -55,6 +55,7 @@ const RegistrationPage = () => {
       formData.year.trim() !== '' &&
       formData.phoneNumber.trim() !== '' &&
       (formData.phoneNumber.trim() === '' || isValidPhoneNumber(formData.phoneNumber)) &&
+      formData.discord.trim() !== '' &&
       formData.category !== ''
     );
   };
@@ -301,7 +302,7 @@ const RegistrationPage = () => {
                   
                   <div className="fade-in-up stagger-3">
                     <label htmlFor="discord" className="block text-white mb-2">
-                      Discord Username
+                      Discord Username<span className="text-summer-orange">*</span>
                     </label>
                     <input
                       type="text"
@@ -309,9 +310,17 @@ const RegistrationPage = () => {
                       name="discord"
                       value={formData.discord}
                       onChange={handleChange}
+                      required
                       placeholder="e.g., username#1234"
-                      className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all"
+                      className={`w-full bg-white/10 border ${
+                        isJustVerify && !formData.discord.trim()
+                          ? 'border-red-500'
+                          : 'border-white/20'
+                      } rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-summer-yellow transition-all`}
                     />
+                    {isJustVerify && !formData.discord.trim() && (
+                      <p className="text-red-500 text-sm mt-1">Discord username is required</p>
+                    )}
                     <p className="text-xs text-white/50 mt-1">
                       We'll use Discord for communication during the event
                     </p>
