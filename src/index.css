@@ -33,6 +33,16 @@
     max-width: 100%;
     height: auto;
   }
+  
+  /* Fix for dropdown text color */
+  select {
+    color-scheme: dark;
+  }
+  
+  select option {
+    background-color: #1F2937;
+    color: #F9FAFB;
+  }
 }
 
 @layer components {

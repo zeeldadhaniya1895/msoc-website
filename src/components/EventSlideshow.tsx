@@ -4,18 +4,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 const slides = [
   {
     id: 1,
-    image: '/event_poster_1.jpg',
-    alt: 'MSOC Current Event Poster'
+    image: '/main.jpg',
+    alt: 'MSTC-summer of code'
   },
   {
     id: 2,
-    image: '/event_poster_2.jpg',
-    alt: 'MSOC Past Event Poster Category 1'
+    image: '/c1.png',
+    alt: 'Category 1'
   },
   {
     id: 3,
-    image: '/event_poster_3.jpg',
-    alt: 'MSOC Past Event Poster Category 2'
+    image: '/c2.png',
+    alt: 'Category 2'
   }
 ];
 
@@ -66,11 +66,11 @@ const EventSlideshow = () => {
   };
   
   return (
-    <div className="w-full aspect-[4/3] relative group perspective max-h-[350px]">
+    <div className="w-full aspect-[3/4] relative group perspective max-h-[450px]">
       {/* 3D Frame Effect */}
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-summer-yellow/30 to-primary/30 transform -skew-x-1 skew-y-1 scale-[1.03] blur-sm z-0 animate-pulse" />
       
-      <div className="absolute inset-0 rounded-xl overflow-hidden z-10">
+      <div className="absolute inset-0 rounded-xl overflow-hidden z-10 bg-black/30">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={currentSlide}
@@ -84,12 +84,12 @@ const EventSlideshow = () => {
               ease: [0.22, 1, 0.36, 1],
               opacity: { duration: 0.5 }
             }}
-            className="absolute inset-0"
+            className="absolute inset-0 flex items-center justify-center"
           >
             <img 
               src={slides[currentSlide].image} 
               alt={slides[currentSlide].alt} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
             
             {/* Gradient overlay to match theme */}
