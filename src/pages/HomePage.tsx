@@ -45,7 +45,7 @@ const HomePage = () => {
               
               <div className="mt-4">
                 <a 
-                  href="https://discord.gg/pTennNV2" 
+                  href="https://discord.gg/Qst6bwrh" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center justify-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-2 px-6 rounded-md transition-all duration-300 w-1/2"

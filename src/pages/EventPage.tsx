@@ -83,7 +83,7 @@ const EventPage = () => {
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
-                  href="https://discord.gg/mstc" 
+                  href="https://discord.gg/Qst6bwrh" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-2 px-6 rounded-md transition-all duration-300 inline-flex items-center gap-2 justify-center"
@@ -157,7 +157,7 @@ const EventPage = () => {
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
-                  href="https://discord.gg/mstc" 
+                  href="https://discord.gg/Qst6bwrh" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-2 px-6 rounded-md transition-all duration-300 inline-flex items-center gap-2 justify-center"

@@ -181,7 +181,7 @@ const RegistrationPage = () => {
                     Thank you for registering for MSOC 2025. We have sent you a confirmation email with further details. Also, make sure to join our Discord server for updates!
                   </p>
                   <a
-                    href="https://discord.gg/mstc"
+                    href="https://discord.gg/Qst6bwrh"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary"
@@ -422,7 +422,7 @@ const RegistrationPage = () => {
               <p>
                 Already registered? Join our{' '}
                 <a
-                  href="https://discord.gg/mstc"
+                  href="https://discord.gg/Qst6bwrh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-summer-yellow hover:underline"
