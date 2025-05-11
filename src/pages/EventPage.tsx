@@ -1,11 +1,22 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { phaseDetails } from '../data/eventData';
 import SunsetBackground from '../components/3d/SunsetBackground';
+import QuizModal from '../components/QuizModal';
 
 const EventPage = () => {
+  const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
+
+  const openQuizModal = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsQuizModalOpen(true);
+  };
+
   return (
     <div className="relative pt-20 pb-20">
       <SunsetBackground />
+      
+      <QuizModal isOpen={isQuizModalOpen} onClose={() => setIsQuizModalOpen(false)} />
       
       {/* Header */}
       <section className="py-12">
@@ -94,9 +105,8 @@ const EventPage = () => {
                   Join Discord
                 </a>
                 <a 
-                  href="https://quiz-platform.msoc.com/mern" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={openQuizModal}
                   className="btn-primary justify-center inline-flex items-center gap-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -168,9 +178,8 @@ const EventPage = () => {
                   Join Discord
                 </a>
                 <a 
-                  href="https://quiz-platform.msoc.com/genai" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={openQuizModal}
                   className="btn-primary justify-center inline-flex items-center gap-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
