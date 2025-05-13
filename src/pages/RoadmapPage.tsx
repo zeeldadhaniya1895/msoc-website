@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { categories, phaseDetails } from '../data/eventData';
 import SunsetBackground from '../components/3d/SunsetBackground';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const RoadmapPage = () => {
+  const navigate = useNavigate();
+  
   // Filter out MERN and GenAI categories
   const filteredCategories = categories.filter(
     category => category.id !== "mern" && category.id !== "genai"
@@ -19,6 +21,13 @@ const RoadmapPage = () => {
       setSelectedCategory(filteredCategories[0]);
     }
   }, [selectedCategory]);
+  
+  // Navigate to detailed roadmap when view button is clicked
+  const handleViewDetailedRoadmap = () => {
+    if (selectedCategory) {
+      navigate(`/${selectedCategory.id}`);
+    }
+  };
   
   return (
     <div className="relative pt-20 pb-20">
@@ -146,12 +155,21 @@ const RoadmapPage = () => {
                   </h3>
                   
                   <div className="card bg-gray-800/80 p-8 text-center">
-                    <p className="text-gray-300">
+                    <p className="text-gray-300 mb-6">
                       Detailed weekly breakdown will be available once registration opens.
                     </p>
-                    <p className="mt-4 text-primary font-semibold">
-                      Check back on May 11th for full roadmap details!
-                    </p>
+                    
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={handleViewDetailedRoadmap}
+                      className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-bold rounded-full inline-flex items-center gap-2 shadow-md"
+                    >
+                      View Detailed Roadmap
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </motion.button>
                   </div>
                 </motion.div>
               )}
@@ -177,6 +195,20 @@ const RoadmapPage = () => {
                     <p className="text-gray-400 text-center mt-6">
                       More details about project development will be available closer to the development phase.
                     </p>
+                    
+                    <div className="mt-6 text-center">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={handleViewDetailedRoadmap}
+                        className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-bold rounded-full inline-flex items-center gap-2 shadow-md"
+                      >
+                        View Detailed Roadmap
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </motion.button>
+                    </div>
                   </div>
                 </motion.div>
               )}

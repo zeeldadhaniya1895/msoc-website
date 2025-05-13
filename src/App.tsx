@@ -10,6 +10,16 @@ import EventPage from './pages/EventPage';
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import FrontendRoadmap from './components/category/Frontend';
+import NodeJSRoadmap from './components/category/NodeJS';
+import FlutterRoadmap from './components/category/Flutter';
+import PythonRoadmap from './components/category/Python';
+import CPandDSARoadmap from './components/category/CPandDSA';
+import BlockchainRoadmap from './components/category/Blockchain';
+import MLandNLPRoadmap from './components/category/MLandNLP';
+import DjangoRoadmap from './components/category/Django';
+import MERNRoadmap from './components/category/MERN';
+import GenAIRoadmap from './components/category/GenAI';
 
 function App() {
   return (
@@ -23,6 +33,16 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/roadmap" element={<RoadmapPage />} />
             <Route path="/event" element={<EventPage />} />
+            <Route path="/html-css-js-react" element={<FrontendRoadmap />} />
+            <Route path="/nodejs" element={<NodeJSRoadmap />} />
+            <Route path="/flutter" element={<FlutterRoadmap />} />
+            <Route path="/python" element={<PythonRoadmap />} />
+            <Route path="/cp-dsa" element={<CPandDSARoadmap />} />
+            <Route path="/blockchain" element={<BlockchainRoadmap />} />
+            <Route path="/ml-nlp" element={<MLandNLPRoadmap />} />
+            <Route path="/django" element={<DjangoRoadmap />} />
+            <Route path="/mern" element={<MERNRoadmap />} />
+            <Route path="/genai" element={<GenAIRoadmap />} />
           </Routes>
         </main>
         <Footer />
