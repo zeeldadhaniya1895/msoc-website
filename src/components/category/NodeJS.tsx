@@ -483,7 +483,7 @@ export default function Roadmap() {
                 <LinkIcon />
               </a>
               <a 
-                href="https://docs.google.com/document/d/1kkpUz7e9lXchpF-2lXdXqlUQqBDGlqtyZDN87p4X8f8/edit?usp=sharing" 
+                href="https://docs.google.com/document/d/1Q2eUqtj3dY0yyRZCwWCcaBF5EZqo9es8/edit?usp=drive_link&ouid=102138017384349792997&rtpof=true&sd=true" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 font-semibold hover:text-blue-300 transition-colors rounded-lg p-4 border border-blue-500/30 w-full sm:w-auto group"
