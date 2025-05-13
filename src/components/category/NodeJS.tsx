@@ -73,71 +73,224 @@ const LinkIcon = () => (
 // Roadmap weeks data
 const roadmap = [
   {
-    title: "Week 1: NodeJS Basics",
+    title: "Week 1: Node.js, npm & JavaScript Essentials",
     quote: "Any application that can be written in JavaScript, will eventually be written in JavaScript.",
     author: "Jeff Atwood",
-    description: "Foundation week to get comfortable with Node.js environment",
+    description: "Foundation week to understand web basics and setup Node.js environment",
     checklist: [
-      "Install Node.js and understand npm basics",
-      "Create your first Node.js script",
-      "Learn about modules and how to import/export them",
-      "Understand asynchronous programming with callbacks",
-      "Learn how to read and write files with the fs module"
+      "Learn basic knowledge of HTTP, SSL certificates, CORS, Hosting, DNS",
+      "Understand how the internet works",
+      "Set up Node.js and npm",
+      "Install and use third-party packages (e.g., figlet)",
+      "Understand package.json and scripts",
+      "Learn JavaScript essentials (async/await, arrow functions, destructuring)",
+      "Explore Node.js core modules: fs, path, os, events, http"
     ],
     resources: [
       {
-        title: "Official Node.js Documentation",
-        description: "The best place to start learning Node.js",
-        link: "https://nodejs.org/en/docs/"
+        title: "Node.js Installation",
+        description: "Official Node.js download page",
+        link: "https://nodejs.org/en/"
       },
       {
-        title: "Node.js Tutorial for Beginners",
-        description: "Comprehensive video tutorial series",
-        link: "https://www.youtube.com/watch?v=TlB_eWDSMt4"
+        title: "Node.js Documentation",
+        description: "Complete and official Node.js documentation",
+        link: "https://nodejs.org/docs/latest/api/"
+      },
+      {
+        title: "Node.js Basics",
+        description: "Comprehensive video tutorial",
+        link: "https://www.youtube.com/watch?v=BLl32FvcdVM"
       }
     ],
-    progressTip: "Start a small project journal to document what you learn each day. This will help reinforce concepts and track your progress."
+    progressTip: "Create a small project that uses different core modules of Node.js (like fs to read files, http to create a simple server). Experiment with package.json scripts."
   },
   {
-    title: "Week 2: Express Framework",
-    quote: "Programming isn't about what you know; it's about what you can figure out.",
-    author: "Chris Pine",
-    description: "Learn to build web servers and APIs with Express.js",
+    title: "Week 2: Express.js & Databases",
+    quote: "Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime.",
+    author: "David Leinweber",
+    description: "Learn to build web servers with Express and understand database concepts",
     checklist: [
-      "Set up a basic Express server",
-      "Create routes and handle HTTP methods",
-      "Implement middleware functions",
-      "Handle form data and JSON requests",
-      "Explore template engines (EJS, Pug, etc.)"
+      "Learn Express.js basics and routing",
+      "Understand .env files, middleware, controllers, routers, services",
+      "Design RESTful APIs",
+      "Learn about request/response structure",
+      "Use Postman/Insomnia for API testing",
+      "Understand SQL and NoSQL databases",
+      "Learn about database normalization and schema design",
+      "Practice designing efficient schemas for different scenarios"
     ],
     resources: [
       {
-        title: "Express.js Documentation",
-        description: "Official documentation for Express.js",
-        link: "https://expressjs.com/"
+        title: "Express.js Basics",
+        description: "Video tutorial on Express fundamentals",
+        link: "https://www.youtube.com/watch?v=7H_QH9nipNs"
       },
       {
-        title: "Express.js Crash Course",
-        description: "Quick introduction to Express.js concepts",
-        link: "https://www.youtube.com/watch?v=L72fhGm1tfE"
+        title: "REST API Documentation",
+        description: "GitHub's guide to REST API design",
+        link: "https://docs.github.com/en/rest"
+      },
+      {
+        title: "MongoDB Tutorial",
+        description: "Complete MongoDB course for beginners in Hindi",
+        link: "https://www.youtube.com/watch?v=W1Kttu53qTg"
       }
     ],
-    progressTip: "Build a simple RESTful API for a resource like 'books' or 'todos' to practice Express routes and middleware."
+    progressTip: "Build a simple CRUD API with Express.js. Design database schemas for at least two different applications like a blog platform and an e-commerce store."
+  },
+  {
+    title: "Week 3: Express.js & Authentication",
+    quote: "First, solve the problem. Then, write the code.",
+    author: "John Johnson",
+    description: "Dive deeper into Express.js and implement authentication systems",
+    checklist: [
+      "Set up MongoDB locally or using Atlas",
+      "Integrate MongoDB with Node.js using Mongoose",
+      "Implement CRUD operations with MongoDB",
+      "Learn about authentication concepts and JWT",
+      "Understand different types of authentication (stateful vs stateless)",
+      "Implement cookie-based authentication",
+      "Implement token-based authentication",
+      "Explore Google OAuth for authentication"
+    ],
+    resources: [
+      {
+        title: "Node.js, Express and MongoDB Complete Course",
+        description: "All-in-one tutorial for backend development",
+        link: "https://www.youtube.com/watch?v=W1Kttu53qTg"
+      },
+      {
+        title: "JWT Authentication Tutorial",
+        description: "Step-by-step guide to implementing JWT auth",
+        link: "https://www.youtube.com/watch?v=mbsmsi7l3r4"
+      }
+    ],
+    progressTip: "Create an authentication system that supports both JWT and session-based auth. Secure your CRUD API from Week 2 with this authentication system."
+  },
+  {
+    title: "Week 4: Explore Various NPM Packages",
+    quote: "A good programmer is someone who always looks both ways before crossing a one-way street.",
+    author: "Doug Linder",
+    description: "Discover and implement common npm packages for various functionalities",
+    checklist: [
+      "Learn file upload packages: Multer, Cloudinary, Sharp, Express-FileUpload",
+      "Explore email & communication: Nodemailer, Mailgun-js/SendGrid, Twilio",
+      "Master authentication & security packages: bcryptjs, jsonwebtoken, cors, helmet, express-rate-limit, dotenv",
+      "Implement backend utilities: axios, uuid, mongoose, express-validator, joi, dayjs/moment"
+    ],
+    resources: [
+      {
+        title: "NPM Website",
+        description: "Browse and search for packages",
+        link: "https://www.npmjs.com/"
+      },
+      {
+        title: "File Upload with Multer Tutorial",
+        description: "Learn how to handle file uploads in Node.js",
+        link: "https://www.youtube.com/watch?v=wIOpe8S2Mk8"
+      }
+    ],
+    progressTip: "Create a mini-project that combines multiple packages. For example, build an API that handles file uploads, sends email notifications, and implements rate limiting."
+  },
+  {
+    title: "Week 5: Deployment and Scaling",
+    quote: "Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to produce bigger and better idiots. So far, the universe is winning.",
+    author: "Rick Cook",
+    description: "Learn to deploy Node.js applications and optimize for scale",
+    checklist: [
+      "Deploy Node.js apps on Render/Vercel/AWS",
+      "Learn about Streams to serve large amounts of data",
+      "Understand Node.js Clusters for parallel processing",
+      "Explore Nginx as a reverse proxy",
+      "Set up CI/CD pipelines for automated deployment",
+      "Implement environment-specific configurations"
+    ],
+    resources: [
+      {
+        title: "Deploying Node.js to Production",
+        description: "Best practices for Node.js deployment",
+        link: "https://www.youtube.com/watch?v=oNlMrpnUSFE"
+      },
+      {
+        title: "Node.js Scaling Techniques",
+        description: "Learn how to scale Node.js applications",
+        link: "https://nodejs.org/en/docs/guides/dont-block-the-event-loop"
+      }
+    ],
+    progressTip: "Deploy your project from previous weeks to a cloud platform. Configure environment variables and test that everything works in production."
+  },
+  {
+    title: "Week 6: Advanced Topics & Final Learning",
+    quote: "It's not a bug – it's an undocumented feature.",
+    author: "Anonymous",
+    description: "Pursue specialized interests and advanced Node.js concepts",
+    checklist: [
+      "Learn real-time communication with Socket.io or WebSockets",
+      "Explore WebRTC for peer-to-peer communication",
+      "Study caching techniques with Redis or Memcached",
+      "Discover GraphQL as an alternative to REST",
+      "Learn about microservices architecture",
+      "Explore serverless functions",
+      "Study performance optimization techniques"
+    ],
+    resources: [
+      {
+        title: "Socket.io Tutorial",
+        description: "Building real-time applications",
+        link: "https://socket.io/get-started/"
+      },
+      {
+        title: "Node.js Complete Course: Basics to Scaling",
+        description: "Comprehensive Node.js learning path",
+        link: "https://youtube.com/playlist?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&feature=shared"
+      }
+    ],
+    progressTip: "Choose one advanced topic that interests you the most and build a small proof-of-concept application to demonstrate your understanding."
+  },
+  {
+    title: "Weeks 7-9: Development Phase",
+    quote: "The best error message is the one that never shows up.",
+    author: "Thomas Fuchs",
+    description: "Apply all your knowledge to build a complete project",
+    checklist: [
+      "Choose a project idea that applies concepts from the learning phase",
+      "Create a backend-focused application (frontend is optional)",
+      "Build a RESTful API with proper authentication and authorization",
+      "Implement data validation and error handling",
+      "Use appropriate npm packages to enhance functionality",
+      "Deploy your application to a cloud platform",
+      "Document your API with tools like Swagger or Postman",
+      "Implement testing for critical components"
+    ],
+    resources: [
+      {
+        title: "Project Ideas for Node.js Developers",
+        description: "Inspiration for backend projects",
+        link: "https://github.com/florinpop17/app-ideas"
+      },
+      {
+        title: "Node.js Best Practices",
+        description: "Guidelines for writing production-ready code",
+        link: "https://github.com/goldbergyoni/nodebestpractices"
+      }
+    ],
+    progressTip: "Focus on completing one feature at a time. Start with the core functionality, then add authentication, validation, etc. Deploy early and often to catch issues."
   }
 ];
 
-// Libraries to explore
+// Node.js libraries and resources
 const recommendedLibraries = [
-  { name: "Mongoose", description: "Elegant MongoDB object modeling for Node.js", link: "https://mongoosejs.com/" },
-  { name: "Sequelize", description: "ORM for SQL databases", link: "https://sequelize.org/" },
-  { name: "Socket.io", description: "Real-time bidirectional event-based communication", link: "https://socket.io/" },
-  { name: "Passport.js", description: "Authentication middleware for Node.js", link: "https://www.passportjs.org/" },
+  { name: "Express.js", description: "Fast, unopinionated, minimalist web framework", link: "https://expressjs.com/" },
+  { name: "Mongoose", description: "MongoDB object modeling for Node.js", link: "https://mongoosejs.com/" },
   { name: "JWT", description: "JSON Web Tokens for secure authentication", link: "https://jwt.io/" },
   { name: "Nodemailer", description: "Send emails from your application", link: "https://nodemailer.com/" },
   { name: "Multer", description: "Middleware for handling multipart/form-data", link: "https://github.com/expressjs/multer" },
-  { name: "Jest", description: "JavaScript testing framework", link: "https://jestjs.io/" },
-  { name: "PM2", description: "Production process manager for Node.js", link: "https://pm2.keymetrics.io/" },
-  { name: "Nest.js", description: "Progressive Node.js framework for building efficient and scalable server-side applications", link: "https://nestjs.com/" }
+  { name: "Socket.io", description: "Real-time bidirectional event-based communication", link: "https://socket.io/" },
+  { name: "Passport.js", description: "Authentication middleware for Node.js", link: "https://www.passportjs.org/" },
+  { name: "Axios", description: "Promise-based HTTP client for browser and Node.js", link: "https://axios-http.com/" },
+  { name: "Joi", description: "Schema validation for JavaScript objects", link: "https://joi.dev/" },
+  { name: "PM2", description: "Production process manager for Node.js", link: "https://pm2.keymetrics.io/" }
 ];
 
 export default function Roadmap() {
@@ -277,9 +430,9 @@ export default function Roadmap() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400"
+            className="text-4xl md:text-5xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500"
           >
-            Node.js Development Path
+            MSTC SUMMER OF CODE 2025
           </motion.h1>
 
           <motion.h2
@@ -288,7 +441,7 @@ export default function Roadmap() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl font-semibold text-center mb-8 text-summer-yellow"
           >
-            Master JavaScript Backend Development
+            Node.js Backend Development
           </motion.h2>
 
           {/* Progress bar */}
@@ -316,22 +469,26 @@ export default function Roadmap() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900/70 p-6 rounded-xl mb-12 border border-gray-800"
+            className="bg-gray-900/70 backdrop-blur-md p-6 rounded-xl mb-12 border border-gray-800 shadow-xl hover:shadow-green-900/20 transition-all duration-300"
           >
             <p className="text-white/80 mb-4">
-              This roadmap provides a structured learning path for becoming a proficient Node.js developer. You'll start with the basics of JavaScript and Node.js, then move on to Express.js for building web applications, learn about databases, authentication, and eventually advanced topics like microservices and deployment strategies.
+              This roadmap is designed to take you from a beginner to a proficient Node.js developer. Learn Node.js in 6 weeks (Learning Phase) and build a project in 3 weeks (Development Phase). You'll master essential backend development concepts, including Express.js, RESTful APIs, authentication, databases, and deployment.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="https://roadmap.sh/nodejs" target="_blank" rel="noopener noreferrer" className="text-blue-400 font-semibold hover:text-blue-300 transition-colors bg-blue-500/20 rounded-lg p-4 border border-blue-500/30 w-full sm:w-auto text-center">
-                Node.js Developer Roadmap | roadmap.sh <LinkIcon />
+              <a href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreferrer" className="text-green-400 font-semibold hover:text-green-300 transition-colors bg-green-500/20 hover:bg-green-500/30 rounded-lg p-4 border border-green-500/30 w-full sm:w-auto text-center group">
+                <span className="relative">
+                  Node.js Official Documentation
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></span>
+                </span>
+                <LinkIcon />
               </a>
               <a 
-                href="https://drive.google.com/drive/folders/your-folder-id?usp=sharing" 
+                href="https://docs.google.com/document/d/1kkpUz7e9lXchpF-2lXdXqlUQqBDGlqtyZDN87p4X8f8/edit?usp=sharing" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-500/20 hover:bg-green-500/30 text-green-400 font-semibold hover:text-green-300 transition-colors rounded-lg p-4 border border-green-500/30 w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 font-semibold hover:text-blue-300 transition-colors rounded-lg p-4 border border-blue-500/30 w-full sm:w-auto group"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block group-hover:translate-y-1 transition-transform duration-300">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>

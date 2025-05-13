@@ -73,81 +73,180 @@ const LinkIcon = () => (
 // Roadmap weeks data
 const roadmap = [
   {
-    title: "Week 1: Python & Django Fundamentals",
+    title: "Phase 1: Foundations (1-2 Months)",
     quote: "Django makes it easier to build better web apps more quickly and with less code.",
-    author: "Django Documentation",
-    description: "Getting started with Python and Django framework",
+    author: "Django Project",
+    description: "Understand Python, Django basics, and set up a development environment.",
     checklist: [
-      "Set up Python development environment",
-      "Learn Python basics (if new to the language)",
-      "Install Django and create your first project",
-      "Understand Django's MTV (Model-Template-View) architecture",
-      "Create basic views and URL patterns"
+      "Learn Python basics: variables, data structures, functions, loops, conditionals",
+      "Understand object-oriented programming: classes, objects, inheritance, polymorphism",
+      "Explore Python modules and packages",
+      "Install Django and create a project",
+      "Understand MVC architecture (Model-View-Template)",
+      "Learn models, views, templates, and URLs",
+      "Build a simple app (e.g., to-do list)",
+      "Explore Django Admin",
+      "Learn SQLite and basic SQL queries",
+      "Understand Django ORM for database interactions"
     ],
     resources: [
       {
-        title: "Django Official Documentation",
-        description: "Comprehensive guide to Django framework",
-        link: "https://docs.djangoproject.com/en/stable/"
+        title: "Python Official Tutorial",
+        description: "Comprehensive guide to learning Python",
+        link: "https://docs.python.org/3/tutorial/"
       },
       {
-        title: "Django for Beginners",
-        description: "Step-by-step guide to building web applications with Django",
-        link: "https://djangoforbeginners.com/"
+        title: "Automate the Boring Stuff with Python",
+        description: "Practical Python programming for beginners",
+        link: "https://automatetheboringstuff.com/"
       },
       {
-        title: "Python Crash Course",
-        description: "Quick Python overview for Django developers",
-        link: "https://www.youtube.com/watch?v=rfscVS0vtbw"
+        title: "Django Official Tutorial",
+        description: "Step-by-step guide to building your first Django app",
+        link: "https://docs.djangoproject.com/en/stable/intro/tutorial01/"
+      },
+      {
+        title: "W3Schools SQL Tutorial",
+        description: "Learn SQL basics for database management",
+        link: "https://www.w3schools.com/sql/"
       }
     ],
-    progressTip: "Start with a simple project like a personal blog or to-do app to practice Django fundamentals. Focus on understanding the project structure and request-response cycle."
+    progressTip: "Project: Build a simple blog with Django featuring CRUD operations for posts and basic UI with Bootstrap."
   },
   {
-    title: "Week 2: Models, Templates & Forms",
-    quote: "Explicit is better than implicit. Simple is better than complex.",
-    author: "The Zen of Python",
-    description: "Dive deeper into Django's core components",
+    title: "Phase 2: Intermediate Skills",
+    quote: "The best programming language is the one that gets used.",
+    author: "Michael Feathers",
+    description: "Dive deeper into Django features and build complex applications.",
     checklist: [
-      "Create data models and understand Django ORM",
-      "Use Django Admin for model management",
-      "Build templates with Django Template Language (DTL)",
-      "Implement forms and form validation",
-      "Add static files (CSS, JavaScript) to your project"
+      "Implement registration, login, logout, password reset",
+      "Use Django's authentication system",
+      "Learn permissions and groups",
+      "Master Django ORM: filtering, aggregations, complex queries",
+      "Understand relationships: ForeignKey, ManyToManyField",
+      "Use PostgreSQL for production",
+      "Create and validate forms with ModelForm and Form",
+      "Handle CSRF protection",
+      "Manage CSS, JS, and user-uploaded media",
+      "Configure storage (e.g., AWS S3)"
     ],
     resources: [
       {
-        title: "Django Models",
-        description: "In-depth guide to database models in Django",
-        link: "https://docs.djangoproject.com/en/stable/topics/db/models/"
+        title: "Django Authentication Docs",
+        description: "Official guide to Django's authentication system",
+        link: "https://docs.djangoproject.com/en/stable/topics/auth/"
       },
       {
-        title: "Django Templates",
-        description: "Working with templates and template tags",
-        link: "https://docs.djangoproject.com/en/stable/topics/templates/"
+        title: "Real Python's Django ORM Guide",
+        description: "In-depth tutorial on Django's Object-Relational Mapping",
+        link: "https://realpython.com/django-orm/"
       },
       {
-        title: "Django Forms",
-        description: "Comprehensive guide to forms handling",
+        title: "Django Forms Docs",
+        description: "Official documentation for handling forms in Django",
         link: "https://docs.djangoproject.com/en/stable/topics/forms/"
+      },
+      {
+        title: "Django Static Files Docs",
+        description: "Guide to managing static files in Django",
+        link: "https://docs.djangoproject.com/en/stable/howto/static-files/"
       }
     ],
-    progressTip: "Extend your initial project by adding more complex models with relationships, custom forms, and styled templates. Practice CRUD (Create, Read, Update, Delete) operations."
+    progressTip: "Project: Build an E-Commerce or Task Manager application with authentication, CRUD operations, search functionality, PostgreSQL, and deploy to Heroku/Render."
+  },
+  {
+    title: "Phase 3: Advanced Skills",
+    quote: "The art of programming is the art of organizing complexity.",
+    author: "Edsger W. Dijkstra",
+    description: "Master advanced Django features, APIs, and production practices.",
+    checklist: [
+      "Build RESTful APIs with serializers, viewsets, routers",
+      "Implement JWT/OAuth authentication",
+      "Test APIs with Postman",
+      "Write unit tests with Django's TestCase",
+      "Use pytest and Django debug toolbar",
+      "Optimize queries with select_related, prefetch_related",
+      "Implement caching (Redis/Memcached)",
+      "Deploy to AWS/DigitalOcean with Gunicorn/Nginx",
+      "Set up CI/CD with GitHub Actions"
+    ],
+    resources: [
+      {
+        title: "DRF Official Tutorial",
+        description: "Quick start guide to Django REST Framework",
+        link: "https://www.django-rest-framework.org/tutorial/quickstart/"
+      },
+      {
+        title: "Django Testing Docs",
+        description: "Guide to writing and running tests in Django",
+        link: "https://docs.djangoproject.com/en/stable/topics/testing/"
+      },
+      {
+        title: "Real Python's Django Performance Guide",
+        description: "Techniques for optimizing Django applications",
+        link: "https://realpython.com/django-performance-optimization/"
+      },
+      {
+        title: "Django Deployment Docs",
+        description: "Guide to deploying Django applications",
+        link: "https://docs.djangoproject.com/en/stable/howto/deployment/"
+      }
+    ],
+    progressTip: "Project: Build a full-stack application like a social media platform or job board with APIs, real-time features (Django Channels), and deploy it to production."
+  },
+  {
+    title: "Phase 4: Specialization and Portfolio",
+    quote: "Simplicity is the soul of efficiency.",
+    author: "Austin Freeman",
+    description: "Deepen expertise and build a portfolio of Django projects.",
+    checklist: [
+      "Learn Django Channels for real-time features",
+      "Use Celery for background tasks",
+      "Implement search with Elasticsearch",
+      "Integrate Django with React/Vue",
+      "Serve APIs to decoupled frontend",
+      "Contribute to Django-related projects on GitHub",
+      "Create 3-5 projects (e.g., e-commerce, real-time app)",
+      "Host projects on GitHub and deploy online"
+    ],
+    resources: [
+      {
+        title: "Django Channels Docs",
+        description: "Guide to real-time features in Django",
+        link: "https://channels.readthedocs.io/"
+      },
+      {
+        title: "Celery Docs",
+        description: "Distributed task queue documentation",
+        link: "https://docs.celeryproject.org/"
+      },
+      {
+        title: "Django + React Tutorial",
+        description: "Build a To-Do application using Django and React",
+        link: "https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react"
+      },
+      {
+        title: "GitHub's Open Source Guide",
+        description: "Resources for open source contributors",
+        link: "https://opensource.guide/"
+      }
+    ],
+    progressTip: "Build a comprehensive portfolio of Django projects showcasing different aspects of your skills. Consider contributing to open-source Django packages to gain experience and visibility."
   }
 ];
 
-// Django libraries and resources
-const djangoResources = [
-  { name: "Django REST Framework", description: "Powerful and flexible toolkit for building Web APIs", link: "https://www.django-rest-framework.org/" },
-  { name: "Django Channels", description: "Real-time functionality with WebSockets", link: "https://channels.readthedocs.io/" },
-  { name: "Django Crispy Forms", description: "Elegant form rendering", link: "https://django-crispy-forms.readthedocs.io/" },
-  { name: "Django Debug Toolbar", description: "Debugging tool for Django applications", link: "https://django-debug-toolbar.readthedocs.io/" },
-  { name: "Django Allauth", description: "Authentication, registration, account management", link: "https://django-allauth.readthedocs.io/" },
-  { name: "Django Filter", description: "Filtering Django QuerySets based on user selections", link: "https://django-filter.readthedocs.io/" },
-  { name: "Celery", description: "Distributed task queue for Django", link: "https://docs.celeryq.dev/en/stable/django/" },
-  { name: "Django CMS", description: "Enterprise content management system", link: "https://www.django-cms.org/" },
-  { name: "Django Wagtail", description: "Content management system built on Django", link: "https://wagtail.org/" },
-  { name: "Django Storages", description: "Collection of storage backends for Django", link: "https://django-storages.readthedocs.io/" }
+// Django libraries and tools
+const recommendedLibraries = [
+  { name: "Django REST Framework", description: "Powerful toolkit for building Web APIs", link: "https://www.django-rest-framework.org/" },
+  { name: "Django Channels", description: "Real-time functionality for Django", link: "https://channels.readthedocs.io/" },
+  { name: "Celery", description: "Distributed task queue for background processing", link: "https://docs.celeryproject.org/" },
+  { name: "Django Debug Toolbar", description: "Debugging panel for development", link: "https://django-debug-toolbar.readthedocs.io/" },
+  { name: "Django Crispy Forms", description: "Controls form rendering behavior", link: "https://django-crispy-forms.readthedocs.io/" },
+  { name: "Django Allauth", description: "Authentication, registration, account management", link: "https://www.intenct.nl/projects/django-allauth/" },
+  { name: "Django Filter", description: "Reusable filtering functionality", link: "https://django-filter.readthedocs.io/" },
+  { name: "Django CORS Headers", description: "Handles Cross-Origin Resource Sharing", link: "https://github.com/adamchainz/django-cors-headers" },
+  { name: "Wagtail CMS", description: "Content management system built on Django", link: "https://wagtail.org/" },
+  { name: "Django Storages", description: "Custom storage backends for Django", link: "https://django-storages.readthedocs.io/" }
 ];
 
 export default function Roadmap() {
@@ -298,7 +397,7 @@ export default function Roadmap() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl font-semibold text-center mb-8 text-summer-yellow"
           >
-            Master Python-based Web Development
+            Django Web Framework
           </motion.h2>
 
           {/* Progress bar */}
@@ -326,22 +425,26 @@ export default function Roadmap() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-900/70 p-6 rounded-xl mb-12 border border-gray-800"
+            className="bg-gray-900/70 backdrop-blur-md p-6 rounded-xl mb-12 border border-gray-800 shadow-xl hover:shadow-green-900/20 transition-all duration-300"
           >
             <p className="text-white/80 mb-4">
-              This roadmap guides you through learning Django, a high-level Python web framework that encourages rapid development and clean, pragmatic design. Django follows the "batteries-included" philosophy and provides a robust set of tools for building web applications quickly and securely.
+              This roadmap provides a comprehensive path to learn Django, a high-level Python web framework, from beginner to advanced levels. It assumes basic knowledge of Python and web development (HTML, CSS, JavaScript). The roadmap is divided into four phases, with estimated timelines and practical projects to build skills.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="https://roadmap.sh/django" target="_blank" rel="noopener noreferrer" className="text-blue-400 font-semibold hover:text-blue-300 transition-colors bg-blue-500/20 rounded-lg p-4 border border-blue-500/30 w-full sm:w-auto text-center">
-                Complete Django Developer Roadmap | roadmap.sh <LinkIcon />
+              <a href="https://docs.djangoproject.com/en/stable/" target="_blank" rel="noopener noreferrer" className="text-green-400 font-semibold hover:text-green-300 transition-colors bg-green-500/20 hover:bg-green-500/30 rounded-lg p-4 border border-green-500/30 w-full sm:w-auto text-center group">
+                <span className="relative">
+                  Django Official Documentation
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"></span>
+                </span>
+                <LinkIcon />
               </a>
               <a 
-                href="https://drive.google.com/drive/folders/your-folder-id?usp=sharing" 
+                href="https://docs.google.com/document/d/1h7BnU_rFHxeiB6hRNnrALd4sWLaGFhYlpWnoQD6FZhU/edit?usp=sharing" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-500/20 hover:bg-green-500/30 text-green-400 font-semibold hover:text-green-300 transition-colors rounded-lg p-4 border border-green-500/30 w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 font-semibold hover:text-blue-300 transition-colors rounded-lg p-4 border border-blue-500/30 w-full sm:w-auto group"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block group-hover:translate-y-1 transition-transform duration-300">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -450,7 +553,7 @@ export default function Roadmap() {
               <h3 className="text-xl md:text-2xl font-semibold text-summer-yellow">Django Ecosystem</h3>
             </div>
             <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {djangoResources.map((resource, index) => (
+              {recommendedLibraries.map((resource, index) => (
                 <a 
                   key={index}
                   href={resource.link}
