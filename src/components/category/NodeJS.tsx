@@ -516,7 +516,20 @@ export default function Roadmap() {
                     className="bg-gradient-to-r from-gray-800 to-gray-900 p-4 cursor-pointer flex justify-between items-center"
                     onClick={() => toggleWeek(weekIndex)}
                   >
-                    <h3 className="text-xl md:text-2xl font-semibold text-summer-yellow">{week.title}</h3>
+                    <div className="flex-1">
+                      <h3 className="text-xl md:text-2xl font-semibold text-summer-yellow">{week.title}</h3>
+                      
+                      {/* Week progress bar */}
+                      <div className="mt-2 flex items-center gap-2 text-sm">
+                        <div className="h-1.5 flex-1 bg-gray-800 rounded-full overflow-hidden">
+                          <div 
+                            className="h-full bg-gradient-to-r from-green-500 to-cyan-400"
+                            style={{ width: `${getWeekProgress(weekIndex)}%` }}
+                          />
+                        </div>
+                        <span className="text-gray-400">{getWeekProgress(weekIndex)}%</span>
+                      </div>
+                    </div>
                     <button className="text-white/70 hover:text-white p-1 rounded-full transition-colors">
                       {openIndex === weekIndex ? <ChevronUpIcon /> : <ChevronDownIcon />}
                     </button>
