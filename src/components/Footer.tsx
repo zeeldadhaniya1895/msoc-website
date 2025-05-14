@@ -78,7 +78,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://discord.gg/Qst6bwrh" 
+                href="https://discord.com/invite/G8uBzqZ8CX" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-primary transition-colors transform hover:scale-110"

@@ -204,7 +204,7 @@ const RegistrationPage = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <a
-                      href="https://discord.gg/Qst6bwrh"
+                      href="https://discord.com/invite/G8uBzqZ8CX"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-2 px-6 rounded-md inline-flex items-center gap-2 justify-center"
@@ -468,7 +468,7 @@ const RegistrationPage = () => {
               <p>
                 Already registered? Join our{' '}
                 <a
-                  href="https://discord.gg/Qst6bwrh"
+                  href="https://discord.com/invite/G8uBzqZ8CX"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-summer-yellow hover:underline"
