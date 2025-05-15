@@ -6,8 +6,8 @@ import RegistrationPage from './pages/RegistrationPage';
 import AboutPage from './pages/AboutPage';
 import RoadmapPage from './pages/RoadmapPage';
 import EventPage from './pages/EventPage';
-import MernCheckpoint1 from './pages/MernCheckpoint1';
-import GenAICheckpoint1 from './pages/GenAICheckpoint1';
+import MernCheckpoint1 from './components/checkpoints/mern/MernCheckpoint1';
+import GenAICheckpoint1 from './components/checkpoints/genai/GenAICheckpoint1';
 
 // Components
 import Navbar from './components/Navbar';

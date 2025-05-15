@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import SunsetBackground from '../components/3d/SunsetBackground';
+import SunsetBackground from '../../3d/SunsetBackground';
 import { useNavigate } from 'react-router-dom';
 
 const GenAICheckpoint1 = () => {
