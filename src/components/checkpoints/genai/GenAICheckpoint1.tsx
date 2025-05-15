@@ -119,13 +119,13 @@ const categories: Category[] = [
     color: "#f97316",
     sections: [
       {
-        title: "Python Basics",
+        title: "Week 1: Python Basics",
         icon: "🐍",
         color: "#f97316",
         topics: [
           {
             id: "python-basics",
-            title: "Week 1: Python Basics & Core Concepts",
+            title: "Python Basics & Core Concepts",
             completed: false,
             topics: [
               { id: "python-inner-working", text: "Python Inner Working - Bytecode, Interpreter, Compilation Process", completed: false },
@@ -163,7 +163,7 @@ const categories: Category[] = [
           },
           {
             id: "data-structures",
-            title: "Week 1: Data Structures & Operations",
+            title: "Data Structures & Operations",
             completed: false,
             topics: [
               { id: "data-structures", text: "Numbers, List, Strings, Dictionary, Tuple", completed: false },
@@ -180,7 +180,7 @@ const categories: Category[] = [
           },
           {
             id: "control-flow",
-            title: "Week 1: Control Flow",
+            title: "Control Flow",
             completed: false,
             topics: [
               { id: "loops", text: "Loops in Python", completed: false },
@@ -191,7 +191,7 @@ const categories: Category[] = [
           },
           {
             id: "functions-closures",
-            title: "Week 1: Functions & Closures",
+            title: "Functions & Closures",
             completed: false,
             topics: [
               { id: "scope-closure", text: "Scope and Closure in Python", completed: false },
@@ -207,7 +207,7 @@ const categories: Category[] = [
           },
           {
             id: "oops",
-            title: "Week 1: Object-Oriented Programming (OOPS) in Python",
+            title: "Object-Oriented Programming (OOPS) in Python",
             completed: false,
             topics: [
               { id: "oops-python", text: "OOPS in Python", completed: false },
