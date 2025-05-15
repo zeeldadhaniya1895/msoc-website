@@ -6,6 +6,8 @@ import RegistrationPage from './pages/RegistrationPage';
 import AboutPage from './pages/AboutPage';
 import RoadmapPage from './pages/RoadmapPage';
 import EventPage from './pages/EventPage';
+import MernCheckpoint1 from './pages/MernCheckpoint1';
+import GenAICheckpoint1 from './pages/GenAICheckpoint1';
 
 // Components
 import Navbar from './components/Navbar';
@@ -43,6 +45,8 @@ function App() {
             <Route path="/django" element={<DjangoRoadmap />} />
             <Route path="/mern" element={<MERNRoadmap />} />
             <Route path="/genai" element={<GenAIRoadmap />} />
+            <Route path="/mern/checkpoint/1" element={<MernCheckpoint1 />} />
+            <Route path="/genai/checkpoint/1" element={<GenAICheckpoint1 />} />
           </Routes>
         </main>
         <Footer />

@@ -28,6 +28,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@headlessui/react": "^2.2.3",
     "@react-three/drei": "^9.56.28",
     "@react-three/fiber": "^8.11.5",
     "autoprefixer": "^10.4.16",
