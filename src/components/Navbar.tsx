@@ -59,7 +59,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Link to="/event" className="nav-link">Event</Link>
+            <Link to="/events" className="nav-link">Event</Link>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -116,7 +116,7 @@ const Navbar = () => {
               Home
             </Link>
             <Link 
-              to="/event" 
+              to="/events" 
               className="text-white hover:text-primary transition-colors pl-4 border-l-2 border-transparent hover:border-primary"
               onClick={() => setIsMobileMenuOpen(false)}
             >

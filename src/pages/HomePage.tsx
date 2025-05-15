@@ -38,7 +38,7 @@ const HomePage = () => {
                 <Link to="/register" className="btn-primary">
                   <span className="summer-icon">🌞</span> Register Now
                 </Link>
-                <Link to="/event" className="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold py-2 px-6 rounded-md transition-all duration-300">
+                <Link to="/events" className="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold py-2 px-6 rounded-md transition-all duration-300">
                   View Event Tracks
                 </Link>
               </div>
@@ -153,7 +153,7 @@ const HomePage = () => {
                 </div>
                 <p className="text-white/70 mt-4">{category.description}</p>
                 <Link 
-                  to="/event" 
+                  to="/s" 
                   className="inline-block mt-4 text-summer-yellow font-semibold hover:underline"
                 >
                   Learn more about this track →
@@ -185,7 +185,7 @@ const HomePage = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link 
-                to="/event" 
+                to="/events" 
                 className="btn-primary text-lg px-8 py-3"
               >
                 <span className="summer-icon">☀️</span> Explore Our Tracks

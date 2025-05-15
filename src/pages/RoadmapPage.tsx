@@ -60,7 +60,7 @@ const RoadmapPage = () => {
             className="mt-6 text-center"
           >
             <p className="text-primary font-semibold mb-2 drop-shadow-md">Looking for MERN Stack or GenAI tracks?</p>
-            <Link to="/event" className="text-secondary hover:text-primary underline font-bold drop-shadow-md">
+            <Link to="/events" className="text-secondary hover:text-primary underline font-bold drop-shadow-md">
               Check out our main event page →
             </Link>
           </motion.div>

@@ -1,70 +1,116 @@
 import { motion } from 'framer-motion';
-import SunsetBackground from '../../3d/SunsetBackground';
 import { useNavigate } from 'react-router-dom';
+import InteractiveBackground from '../../../components/common/InteractiveBackground';
 
 const GenAICheckpoint1 = () => {
   const navigate = useNavigate();
-  
+
   return (
-    <div className="relative pt-24 pb-16 min-h-screen">
-      <SunsetBackground />
-      
-      <div className="container mx-auto px-4 lg:px-6 max-w-4xl">
-        <div className="flex mb-6 items-center">
-          <button 
-            onClick={() => navigate('/')}
-            className="text-white/70 hover:text-white flex items-center gap-2 mb-8"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Back to Events
-          </button>
+    <InteractiveBackground>
+      <div className="container mx-auto px-4 py-8 mb-16">
+        {/* Decorative Circular Rings */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div 
+            className="absolute h-72 w-72 rounded-full border-4 border-orange-500/10 top-20 -right-20"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div 
+            className="absolute h-80 w-80 rounded-full border-2 border-orange-600/5 bottom-20 -left-20"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div 
+            className="absolute h-48 w-48 rounded-full border-8 border-orange-700/5 top-1/2 left-1/4"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div 
+            className="absolute h-64 w-64 rounded-full border border-dashed border-orange-400/10 top-1/4 right-1/3"
+            animate={{ rotate: 360, scale: [1, 1.05, 1] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          />
         </div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="glass-card p-8 rounded-xl border border-secondary/20"
-        >
-          <div className="mb-8 text-center">
-            <div className="inline-block p-4 bg-secondary/20 rounded-full mb-4">
-              <div className="text-4xl">🧠</div>
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-secondary mb-2">GenAI Track - Checkpoint 1</h1>
-            <p className="text-xl text-white/70">Introduction to Generative AI</p>
-          </div>
-          
-          <div className="text-center mb-12">
-            <div className="p-8 bg-secondary/5 rounded-lg border border-secondary/10 mb-6">
-              <svg className="w-16 h-16 mx-auto text-secondary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h2 className="text-2xl font-bold text-white mb-2">Coming Soon!</h2>
-              <p className="text-lg text-white/70 max-w-lg mx-auto">
-                The GenAI Track Checkpoint 1 materials and challenges will be released soon. 
-                Stay tuned for exciting content to begin your journey into Generative AI and LLMs!
-              </p>
-            </div>
+
+        <div className="flex justify-between items-center mb-8">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/events')}
+            className="px-6 py-2.5 bg-orange-500/10 hover:bg-orange-500/20 text-white rounded-lg backdrop-blur-xl border border-orange-500/20 transition-all duration-300 shadow-lg"
+          >
+            ← Back to Events
+          </motion.button>
+        </div>
+
+        <div className="flex flex-col items-center justify-center min-h-[50vh]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-black/50 backdrop-blur-xl rounded-2xl p-8 border border-orange-900/30 shadow-xl text-center max-w-2xl w-full"
+          >
+            <div className="relative">
+              {/* Decorative ring */}
+              <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full border border-orange-500/10 -z-10"></div>
+              <div className="absolute -bottom-10 -left-10 w-20 h-20 rounded-full border-2 border-dashed border-orange-600/5 animate-spin -z-10" style={{ animationDuration: '60s' }}></div>
             
-            <p className="text-white/50">
-              We're preparing comprehensive resources to help you understand and build with large language models,
-              prompt engineering, and AI application development. Check back later for updates.
-            </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <button
-              onClick={() => navigate('/')}
-              className="px-6 py-3 bg-secondary hover:bg-secondary-dark text-white font-bold rounded-full shadow-md"
-            >
-              Return to Event Page
-            </button>
-          </div>
-        </motion.div>
+              <motion.h1 
+                className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500 bg-clip-text text-transparent mb-6"
+                animate={{ 
+                  backgroundPosition: ['0% center', '100% center', '0% center'],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                style={{ backgroundSize: '300% 100%' }}
+              >
+                Coming Soon
+              </motion.h1>
+              
+              <motion.div 
+                className="text-xl text-gray-300 mb-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                The GenAI Checkpoint resources are being prepared and will be available shortly.
+              </motion.div>
+              
+              {/* <motion.div
+                className="mb-6 relative"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <div className="h-2.5 bg-gray-800/50 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "30%" }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="h-full bg-gradient-to-r from-orange-500 to-amber-500"
+                  />
+                </div>
+                <div className="mt-2 text-right text-sm text-gray-400">
+                  30% complete
+                </div>
+              </motion.div> */}
+              
+              <motion.p
+                className="text-gray-400 italic"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                Our team is working hard to curate high-quality learning materials for the GenAI track. Check back soon!
+              </motion.p>
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </InteractiveBackground>
   );
 };
 

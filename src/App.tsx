@@ -34,7 +34,7 @@ function App() {
             <Route path="/register" element={<RegistrationPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/roadmap" element={<RoadmapPage />} />
-            <Route path="/event" element={<EventPage />} />
+            <Route path="/events" element={<EventPage />} />
             <Route path="/html-css-js-react" element={<FrontendRoadmap />} />
             <Route path="/nodejs" element={<NodeJSRoadmap />} />
             <Route path="/flutter" element={<FlutterRoadmap />} />
