@@ -220,6 +220,116 @@ const categories: Category[] = [
             ]
           }
         ]
+      },
+      {
+        title: "Week 2: Understanding LLM and using it",
+        icon: "🤖",
+        color: "#f97316",
+        topics: [
+          {
+            id: "llm-basics",
+            title: "How LLM Works?",
+            completed: false,
+            topics: [
+              { id: "llm-working", text: "Working of LLM", completed: false },
+              { id: "prompt-types", text: "Types of Prompts and prompt engineering", completed: false },
+              { id: "prompt-tips", text: "Some tips for prompting", completed: false }
+            ]
+          },
+          {
+            id: "gemini-api",
+            title: "Inferencing LLM using Gemini API",
+            completed: false,
+            resources: [
+              {
+                id: "gemini-tutorial",
+                title: "Gemini API Tutorial",
+                link: "https://ai.google.dev/tutorials/setup",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "openai-sdk",
+            title: "Inferencing Gemini Model using openAI SDK",
+            completed: false,
+            resources: [
+              {
+                id: "openai-sdk",
+                title: "OpenAI compatible SDK",
+                link: "https://github.com/google/generative-ai-python",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "groq-api",
+            title: "Using an open source alternative to openAI API -> Groq API",
+            completed: false,
+            resources: [
+              {
+                id: "groq-docs",
+                title: "Groq AI API Docs",
+                link: "https://console.groq.com/docs",
+                completed: false
+              },
+              {
+                id: "groq-models",
+                title: "Groq AI Models",
+                link: "https://console.groq.com/docs/models",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "local-llms",
+            title: "Running LLMS locally",
+            completed: false,
+            resources: [
+              {
+                id: "ollama-tutorial",
+                title: "Ollama Tutorial",
+                link: "https://ollama.ai/docs",
+                completed: false
+              },
+              {
+                id: "huggingface-tutorial",
+                title: "Hugging Face Tutorial",
+                link: "https://huggingface.co/docs/transformers/index",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "llm-projects",
+            title: "Getting Started with LLM-Powered Applications",
+            completed: false,
+            topics: [
+              { id: "project-guidelines", text: "Work on 5-6 projects incorporating basic AI applications using the provided LLM inference options", completed: false },
+              { id: "discord-sharing", text: "Share progress in Discord section and engage in discussions", completed: false }
+            ],
+            resources: [
+              {
+                id: "ai-girlfriend",
+                title: "AI Girlfriend Project",
+                link: "https://github.com/features/copilot",
+                completed: false
+              },
+              {
+                id: "basic-agent",
+                title: "Basic Agent Project",
+                link: "https://github.com/features/copilot",
+                completed: false
+              },
+              {
+                id: "image-captioner",
+                title: "AI Image Captioner Project",
+                link: "https://github.com/features/copilot",
+                completed: false
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -273,6 +383,51 @@ const categories: Category[] = [
               }
             ]
           }
+        ]
+      },
+      {
+        title: "Week 2: Text Preprocessing & Regular Expressions",
+        icon: "📝",
+        color: "#10b981",
+        topics: [
+          {
+            id: "text-preprocessing",
+            title: "Text Preprocessing Basics",
+            completed: false,
+            topics: [
+              { id: "stopwords", text: "Learn about stopwords, stemming, and lemmatization (nltk.stem, nltk.corpus.stopwords)", completed: false },
+              { id: "text-cleaning", text: "Clean text data (remove punctuation, lowercase all words)", completed: false },
+              { id: "regex-practice", text: "Practice regex (e.g., extract emails/phone numbers from text)", completed: false }
+            ]
+          },
+          {
+            id: "major-task",
+            title: "Major Task",
+            completed: false,
+            topics: [
+              { id: "preprocess-paragraph", text: "Preprocess a paragraph (remove stopwords, punctuation, and lemmatize words)", completed: false }
+            ]
+          },
+          {
+            id: "resources",
+            title: "Resources",
+            completed: false,
+            resources: [
+              {
+                id: "regex-guide",
+                title: "Regex Guide (MDN)",
+                link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions",
+                completed: false
+              },
+              {
+                id: "text-cleaning-video",
+                title: "Text Cleaning in NLP",
+                link: "https://www.youtube.com/watch?v=8JdaI8T3-ew",
+                completed: false
+              }
+            ]
+          },
+          
         ]
       }
     ]
