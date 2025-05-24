@@ -231,9 +231,38 @@ const categories: Category[] = [
             title: "How LLM Works?",
             completed: false,
             topics: [
-              { id: "llm-working", text: "Working of LLM", completed: false },
-              { id: "prompt-types", text: "Types of Prompts and prompt engineering", completed: false },
+              { id: "llm-working", text: "Working of LLM", completed: false }
+            ],
+            resources: [
+              {
+                id: "llm-working-video",
+                title: "Working of LLM Video",
+                link: "https://www.youtube.com/watch?v=K45s2PgywvI",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "prompt-engineering",
+            title: "Types of Prompts and prompt engineering",
+            completed: false,
+            topics: [
+              { id: "prompt-types", text: "Types of Prompting", completed: false },
               { id: "prompt-tips", text: "Some tips for prompting", completed: false }
+            ],
+            resources: [
+              {
+                id: "prompt-types-article",
+                title: "8 Types of Prompt Engineering",
+                link: "https://medium.com/@amiraryani/8-types-of-prompt-engineering-5322fff77bdf",
+                completed: false
+              },
+              {
+                id: "prompt-tips-aws",
+                title: "AWS Prompt Engineering Guide",
+                link: "https://aws.amazon.com/what-is/prompt-engineering/",
+                completed: false
+              }
             ]
           },
           {
@@ -244,7 +273,7 @@ const categories: Category[] = [
               {
                 id: "gemini-tutorial",
                 title: "Gemini API Tutorial",
-                link: "https://ai.google.dev/tutorials/setup",
+                link: "https://www.youtube.com/watch?v=W0rNUAfqGFc",
                 completed: false
               }
             ]
@@ -256,8 +285,8 @@ const categories: Category[] = [
             resources: [
               {
                 id: "openai-sdk",
-                title: "OpenAI compatible SDK",
-                link: "https://github.com/google/generative-ai-python",
+                title: "OpenAI compatible SDK Guide",
+                link: "https://medium.com/@piyushkashyap045/how-to-use-gemini-models-through-the-openai-library-a-step-by-step-guide-169e3585c9ce",
                 completed: false
               }
             ]
@@ -270,7 +299,7 @@ const categories: Category[] = [
               {
                 id: "groq-docs",
                 title: "Groq AI API Docs",
-                link: "https://console.groq.com/docs",
+                link: "https://console.groq.com/docs/quickstart",
                 completed: false
               },
               {
@@ -289,13 +318,13 @@ const categories: Category[] = [
               {
                 id: "ollama-tutorial",
                 title: "Ollama Tutorial",
-                link: "https://ollama.ai/docs",
+                link: "https://www.youtube.com/watch?v=LA-hZDnn5Hc",
                 completed: false
               },
               {
                 id: "huggingface-tutorial",
                 title: "Hugging Face Tutorial",
-                link: "https://huggingface.co/docs/transformers/index",
+                link: "https://www.youtube.com/watch?v=bFB4zqkcatU",
                 completed: false
               }
             ]
@@ -312,19 +341,19 @@ const categories: Category[] = [
               {
                 id: "ai-girlfriend",
                 title: "AI Girlfriend Project",
-                link: "https://github.com/features/copilot",
+                link: "https://www.youtube.com/watch?v=sGX6B_rgcd4",
                 completed: false
               },
               {
                 id: "basic-agent",
                 title: "Basic Agent Project",
-                link: "https://github.com/features/copilot",
+                link: "https://www.youtube.com/watch?v=s0jL3EKxt6I",
                 completed: false
               },
               {
                 id: "image-captioner",
                 title: "AI Image Captioner Project",
-                link: "https://github.com/features/copilot",
+                link: "https://www.youtube.com/watch?v=k5doY0ym4RI",
                 completed: false
               }
             ]
