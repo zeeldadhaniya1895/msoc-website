@@ -451,7 +451,7 @@ const categories: Category[] = [
               {
                 id: "text-cleaning-video",
                 title: "Text Cleaning in NLP",
-                link: "https://www.youtube.com/watch?v=8JdaI8T3-ew",
+                link: "https://www.youtube.com/watch?v=pvUiCMCLgBA",
                 completed: false
               }
             ]
