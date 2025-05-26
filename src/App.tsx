@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import RoadmapPage from './pages/RoadmapPage';
 import EventPage from './pages/EventPage';
 import MernCheckpoint1 from './components/checkpoints/mern/MernCheckpoint1';
+import MernCheckpoint2 from './components/checkpoints/mern/MernCheckpoint2';
 import GenAICheckpoint1 from './components/checkpoints/genai/GenAICheckpoint1';
 
 // Components
@@ -46,6 +47,7 @@ function App() {
             <Route path="/mern" element={<MERNRoadmap />} />
             <Route path="/genai" element={<GenAIRoadmap />} />
             <Route path="/mern/checkpoint/1" element={<MernCheckpoint1 />} />
+            <Route path="/mern/checkpoint/2" element={<MernCheckpoint2 />} />
             <Route path="/genai/checkpoint/1" element={<GenAICheckpoint1 />} />
           </Routes>
         </main>
