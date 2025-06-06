@@ -115,7 +115,7 @@ interface Category {
 const categories: Category[] = [
   {
     id: "excuse-generator-project",
-    title: "Excuse Generator Project",
+    title: "Mini Task",
     color: "#f97316",
     sections: [
       {
