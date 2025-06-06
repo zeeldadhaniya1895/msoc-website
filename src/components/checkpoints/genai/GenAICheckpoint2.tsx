@@ -114,248 +114,81 @@ interface Category {
 
 const categories: Category[] = [
   {
-    id: "leveraging-ai",
+    id: "leveraging-ai-checkpoint2",
     title: "Leveraging AI",
     color: "#f97316",
     sections: [
       {
-        title: "Week 1: Python Basics",
-        icon: "🐍",
-        color: "#f97316",
-        topics: [
-          {
-            id: "python-basics",
-            title: "Python Basics & Core Concepts",
-            completed: false,
-            topics: [
-              { id: "python-inner-working", text: "Python Inner Working - Bytecode, Interpreter, Compilation Process", completed: false },
-              { id: "memory-management", text: "Memory management in Python (Garbage collection)", completed: false },
-              { id: "python-vm", text: "Python Virtual Machine (PVM)", completed: false },
-              { id: "mutable-immutable", text: "Mutable and Immutable in Python", completed: false },
-              { id: "data-types", text: "Data Types", completed: false },
-            ],
-            resources: [
-              {
-                id: "chai-python",
-                title: "Chai Aur Python Playlist",
-                link: "https://www.youtube.com/playlist?list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
-                completed: false
-              },
-              {
-                id: "colab-tutorial",
-                title: "Google Colab Tutorial",
-                link: "https://www.youtube.com/watch?v=bP4JRwapoFc",
-                completed: false
-              },
-              {
-                id: "w3-python",
-                title: "W3 School Python Tutorial",
-                link: "https://www.w3schools.com/python/",
-                completed: false
-              },
-              {
-                id: "gfg-python",
-                title: "GFG Python",
-                link: "https://www.geeksforgeeks.org/python-programming-language/",
-                completed: false
-              }
-            ]
-          },
-          {
-            id: "data-structures",
-            title: "Data Structures & Operations",
-            completed: false,
-            topics: [
-              { id: "data-structures", text: "Numbers, List, Strings, Dictionary, Tuple", completed: false },
-              { id: "list-methods", text: "List: methods, indexing, nested lists", completed: false },
-              { id: "strings", text: "Strings: immutability, operations, slicing", completed: false },
-              { id: "tuples", text: "Tuple: immutability, packing/unpacking", completed: false },
-              { id: "dictionary", text: "Dictionary: key-value pairs, methods, iteration", completed: false },
-              { id: "numbers", text: "Numbers: integer, float, complex", completed: false },
-              { id: "copy-reference", text: "Copy, Reference Count, Slice, etc.", completed: false },
-              { id: "id-operators", text: "id(), is vs ==", completed: false },
-              { id: "shallow-deep", text: "Shallow copy vs Deep copy (copy module)", completed: false },
-              { id: "slicing", text: "Slicing operations (list[start:end:step])", completed: false },
-            ]
-          },
-          {
-            id: "control-flow",
-            title: "Control Flow",
-            completed: false,
-            topics: [
-              { id: "loops", text: "Loops in Python", completed: false },
-              { id: "for-while", text: "for, while loops", completed: false },
-              { id: "break-continue", text: "break, continue, else with loops", completed: false },
-              { id: "range-enumerate", text: "range(), enumerate(), list comprehensions", completed: false },
-            ]
-          },
-          {
-            id: "functions-closures",
-            title: "Functions & Closures",
-            completed: false,
-            topics: [
-              { id: "scope-closure", text: "Scope and Closure in Python", completed: false },
-              { id: "legb-rule", text: "Local, Enclosing, Global, Built-in scopes (LEGB rule)", completed: false },
-              { id: "global-nonlocal", text: "global and nonlocal keywords", completed: false },
-              { id: "closures", text: "Closures and when they are used", completed: false },
-              { id: "decorators", text: "Decorators in Python", completed: false },
-              { id: "first-class", text: "Functions as first-class citizens", completed: false },
-              { id: "higher-order", text: "Higher-order functions", completed: false },
-              { id: "function-decorators", text: "Function decorators (@decorator)", completed: false },
-              { id: "use-cases", text: "Use cases (logging, authentication, timing, etc.)", completed: false },
-            ]
-          },
-          {
-            id: "oops",
-            title: "Object-Oriented Programming (OOPS) in Python",
-            completed: false,
-            topics: [
-              { id: "oops-python", text: "OOPS in Python", completed: false },
-              { id: "class-object", text: "Class and Object", completed: false },
-              { id: "init-constructor", text: "__init__() constructor", completed: false },
-              { id: "inheritance", text: "Inheritance (Single, Multiple, Multi-level)", completed: false },
-              { id: "polymorphism", text: "Polymorphism, Encapsulation, Abstraction", completed: false },
-              { id: "dunder-methods", text: "Dunder methods (__str__, __repr__, etc.)", completed: false },
-              { id: "class-methods", text: "Class methods and static methods", completed: false },
-            ]
-          }
-        ]
-      },
-      {
-        title: "Week 2: Understanding LLM and using it",
+        title: "Week 3: Agentic AI",
         icon: "🤖",
         color: "#f97316",
         topics: [
           {
-            id: "llm-basics",
-            title: "How LLM Works?",
+            id: "agentic-ai-basics",
+            title: "What is Agentic AI and building it using API Calling",
             completed: false,
             topics: [
-              { id: "llm-working", text: "Working of LLM", completed: false }
+              { id: "agentic-ai-intro", text: "What is Agentic AI", completed: false },
+              { id: "weather-agent", text: "Weather AI agent", completed: false },
+              { id: "postgres-agent", text: "AI Agent with Postgres", completed: false },
+              { id: "webpage-agent", text: "AI Agent for Webpage Support", completed: false },
+              { id: "video-summarizer", text: "Video Summarizer AI Agent", completed: false }
             ],
             resources: [
               {
-                id: "llm-working-video",
-                title: "Working of LLM Video",
-                link: "https://www.youtube.com/watch?v=K45s2PgywvI",
-                completed: false
-              }
-            ]
-          },
-          {
-            id: "prompt-engineering",
-            title: "Types of Prompts and prompt engineering",
-            completed: false,
-            topics: [
-              { id: "prompt-types", text: "Types of Prompting", completed: false },
-              { id: "prompt-tips", text: "Some tips for prompting", completed: false }
-            ],
-            resources: [
-              {
-                id: "prompt-types-article",
-                title: "8 Types of Prompt Engineering",
-                link: "https://medium.com/@amiraryani/8-types-of-prompt-engineering-5322fff77bdf",
-                completed: false
-              },
-              {
-                id: "prompt-tips-aws",
-                title: "AWS Prompt Engineering Guide",
-                link: "https://aws.amazon.com/what-is/prompt-engineering/",
-                completed: false
-              }
-            ]
-          },
-          {
-            id: "gemini-api",
-            title: "Inferencing LLM using Gemini API",
-            completed: false,
-            resources: [
-              {
-                id: "gemini-tutorial",
-                title: "Gemini API Tutorial",
-                link: "https://www.youtube.com/watch?v=W0rNUAfqGFc",
-                completed: false
-              }
-            ]
-          },
-          {
-            id: "openai-sdk",
-            title: "Inferencing Gemini Model using openAI SDK",
-            completed: false,
-            resources: [
-              {
-                id: "openai-sdk",
-                title: "OpenAI compatible SDK Guide",
-                link: "https://medium.com/@piyushkashyap045/how-to-use-gemini-models-through-the-openai-library-a-step-by-step-guide-169e3585c9ce",
-                completed: false
-              }
-            ]
-          },
-          {
-            id: "groq-api",
-            title: "Using an open source alternative to openAI API -> Groq API",
-            completed: false,
-            resources: [
-              {
-                id: "groq-docs",
-                title: "Groq AI API Docs",
-                link: "https://console.groq.com/docs/quickstart",
-                completed: false
-              },
-              {
-                id: "groq-models",
-                title: "Groq AI Models",
-                link: "https://console.groq.com/docs/models",
-                completed: false
-              }
-            ]
-          },
-          {
-            id: "local-llms",
-            title: "Running LLMS locally",
-            completed: false,
-            resources: [
-              {
-                id: "ollama-tutorial",
-                title: "Ollama Tutorial",
-                link: "https://www.youtube.com/watch?v=LA-hZDnn5Hc",
-                completed: false
-              },
-              {
-                id: "huggingface-tutorial",
-                title: "Hugging Face Tutorial",
-                link: "https://www.youtube.com/watch?v=bFB4zqkcatU",
-                completed: false
-              }
-            ]
-          },
-          {
-            id: "llm-projects",
-            title: "Getting Started with LLM-Powered Applications",
-            completed: false,
-            topics: [
-              { id: "project-guidelines", text: "Work on 5-6 projects incorporating basic AI applications using the provided LLM inference options", completed: false },
-              { id: "discord-sharing", text: "Share progress in Discord section and engage in discussions", completed: false }
-            ],
-            resources: [
-              {
-                id: "ai-girlfriend",
-                title: "AI Girlfriend Project",
-                link: "https://www.youtube.com/watch?v=sGX6B_rgcd4",
-                completed: false
-              },
-              {
-                id: "basic-agent",
-                title: "Basic Agent Project",
+                id: "agentic-ai-video",
+                title: "What is Agentic AI",
                 link: "https://www.youtube.com/watch?v=s0jL3EKxt6I",
                 completed: false
               },
               {
-                id: "image-captioner",
-                title: "AI Image Captioner Project",
-                link: "https://www.youtube.com/watch?v=k5doY0ym4RI",
+                id: "weather-agent-video",
+                title: "Weather AI agent",
+                link: "https://www.youtube.com/watch?v=vUYnRGotTbo",
+                completed: false
+              },
+              {
+                id: "postgres-agent-video",
+                title: "AI Agent with Postgres",
+                link: "https://www.youtube.com/watch?v=kRR1K3q5nlg",
+                completed: false
+              },
+              {
+                id: "webpage-agent-video",
+                title: "AI Agent for Webpage Support",
+                link: "https://www.youtube.com/watch?v=SI7gdRQcGSY",
+                completed: false
+              },
+              {
+                id: "video-summarizer-video",
+                title: "Video Summarizer AI Agent",
+                link: "https://www.youtube.com/watch?v=Ih1LDnPijFU&list=PLZoTAELRMXVMBr14UQ30AFlnlQ7eL5wjl&index=5",
                 completed: false
               }
+            ]
+          },
+          {
+            id: "langchain-langraph",
+            title: "AI Agent using Langchain And Langraph",
+            completed: false,
+            topics: [
+              { id: "langchain-basics", text: "Learn Langchain and Langraph for building AI Agents", completed: false }
+            ],
+            resources: [
+              {
+                id: "campusx-langchain",
+                title: "CampusX Langchain Playlist",
+                link: "https://www.youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "note",
+            title: "Important Note",
+            completed: false,
+            topics: [
+              { id: "note-text", text: "Some of the above tutorials are in javascript but the underlying concept remains the same. So you can also make them in python.", completed: false }
             ]
           }
         ]
@@ -363,128 +196,138 @@ const categories: Category[] = [
     ]
   },
   {
-    id: "fine-tuning-ai",
-    title: "Fine-tuning AI",
-    color: "#10b981",
-    sections: [
-      {
-        title: "Introduction to NLP & Python Basics",
-        icon: "🔤",
-        color: "#10b981",
-        topics: [
-          {
-            id: "nlp-intro",
-            title: "Week 1: Introduction to NLP & Python Basics",
-            completed: false,
-            topics: [
-              { id: "nlp-overview", text: "Read NLP Overview", completed: false },
-              { id: "install-python", text: "Install Python and Jupyter Notebook", completed: false },
-              { id: "practice-python", text: "Practice Python basics: strings, lists, loops, and functions", completed: false },
-              { id: "nltk-tokenize", text: "Use nltk library to tokenize a sentence", completed: false },
-            ],
-            resources: [
-              {
-                id: "nlp-guide",
-                title: "Ultimate Guide to NLP",
-                link: "https://www.analyticsvidhya.com/blog/2017/01/ultimate-guide-to-understand-implement-natural-language-processing-codes-in-python/",
-                completed: false
-              },
-              {
-                id: "python-beginners",
-                title: "Python for Beginners (W3Schools)",
-                link: "https://www.w3schools.com/python/",
-                completed: false
-              },
-              {
-                id: "nltk-docs",
-                title: "NLTK Documentation",
-                link: "https://www.nltk.org/",
-                completed: false
-              }
-            ],
-            videos: [
-              {
-                id: "python-nlp-v1",
-                title: "Google Colab for quick Python experiments",
-                link: "https://colab.research.google.com/",
-                description: "Use Google Colab for quick Python experiments without local setup.",
-                completed: false
-              }
-            ]
-          }
-        ]
-      },
-      {
-        title: "Week 2: Text Preprocessing & Regular Expressions",
-        icon: "📝",
-        color: "#10b981",
-        topics: [
-          {
-            id: "text-preprocessing",
-            title: "Text Preprocessing Basics",
-            completed: false,
-            topics: [
-              { id: "stopwords", text: "Learn about stopwords, stemming, and lemmatization (nltk.stem, nltk.corpus.stopwords)", completed: false },
-              { id: "text-cleaning", text: "Clean text data (remove punctuation, lowercase all words)", completed: false },
-              { id: "regex-practice", text: "Practice regex (e.g., extract emails/phone numbers from text)", completed: false }
-            ]
-          },
-          {
-            id: "major-task",
-            title: "Major Task",
-            completed: false,
-            topics: [
-              { id: "preprocess-paragraph", text: "Preprocess a paragraph (remove stopwords, punctuation, and lemmatize words)", completed: false }
-            ]
-          },
-          {
-            id: "resources",
-            title: "Resources",
-            completed: false,
-            resources: [
-              {
-                id: "regex-guide",
-                title: "Regex Guide (MDN)",
-                link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions",
-                completed: false
-              },
-              {
-                id: "text-cleaning-video",
-                title: "Text Cleaning in NLP",
-                link: "https://www.youtube.com/watch?v=pvUiCMCLgBA",
-                completed: false
-              }
-            ]
-          },
-          
-        ]
-      }
-    ]
+      id: "fine-tuning-ai",
+      title: "Fine-tuning AI",
+      color: "#f97316",
+      sections: [
+        {
+          title: "Week 3: Bag-of-Words & TF-IDF",
+          icon: "📚",
+          color: "#f97316",
+          topics: [
+            {
+              id: "bow-tfidf-basics",
+              title: "Bag-of-Words & TF-IDF Basics",
+              completed: false,
+              topics: [
+                { id: "bow-understanding", text: "Understand BoW and TF-IDF using sklearn.feature_extraction.text", completed: false },
+                { id: "vector-conversion", text: "Convert a set of sentences into BoW/TF-IDF vectors", completed: false },
+                { id: "sentiment-classifier", text: "Train a simple sentiment classifier (positive/negative) using Naive Bayes", completed: false }
+              ],
+              resources: [
+                {
+                  id: "sklearn-tfidf",
+                  title: "Scikit-learn TF-IDF",
+                  link: "https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html",
+                  completed: false
+                },
+                {
+                  id: "tfidf-video",
+                  title: "TF-IDF Explained (Hindi)",
+                  link: "https://www.youtube.com/watch?v=4VMR2Rs-Gpc",
+                  completed: false
+                }
+              ]
+            },
+            {
+              id: "movie-review-task",
+              title: "Major Task: Movie Review Classifier",
+              completed: false,
+              topics: [
+                { id: "imdb-dataset", text: "Build a movie review classifier using IMDb dataset", completed: false }
+              ],
+              resources: [
+                {
+                  id: "imdb-dataset-link",
+                  title: "IMDb Dataset of 50K Movie Reviews",
+                  link: "https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews",
+                  completed: false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Week 4: Word Embeddings",
+          icon: "🔤",
+          color: "#f97316",
+          topics: [
+            {
+              id: "word-embeddings-basics",
+              title: "Word Embeddings Basics",
+              completed: false,
+              topics: [
+                { id: "word2vec-learning", text: "Learn about Word2Vec (Word2Vec library)", completed: false },
+                { id: "word2vec-training", text: "Train/fine-tune Word2Vec on a small dataset", completed: false },
+                { id: "word-analogies", text: "Find word analogies (e.g., 'king - man + woman = queen')", completed: false }
+              ],
+              resources: [
+                {
+                  id: "word-embeddings-article",
+                  title: "Word Embeddings in NLP",
+                  link: "https://www.geeksforgeeks.org/word-embeddings-in-nlp/",
+                  completed: false
+                },
+                {
+                  id: "word-embeddings-video",
+                  title: "Word Embeddings Explained (English)",
+                  link: "https://youtu.be/viZrOnJclY0",
+                  completed: false
+                }
+              ]
+            },
+            {
+              id: "custom-embeddings-task",
+              title: "Major Task: Custom Word Embeddings",
+              completed: false,
+              topics: [
+                { id: "custom-dataset", text: "Create a word embedding model for a custom dataset (e.g., tweets)", completed: false }
+              ]
+            },
+            {
+              id: "motivational-quote",
+              title: "Motivational Quote",
+              completed: false,
+              topics: [
+                { id: "quote", text: "Words are numbers in NLP—embed them wisely!", completed: false }
+              ]
+            }
+          ]
+        }
+      ]
   }
 ];
 
-const GenAICheckpoint1 = () => {
+const GenAICheckpoint2 = () => {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState<string>("leveraging-ai");
-  const [activeSection, setActiveSection] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState("leveraging-ai-checkpoint2");
+  const [expandedSections, setExpandedSections] = useState<{ [key: string]: string }>({});
+  const [expandedTopics, setExpandedTopics] = useState<{ [key: string]: boolean }>({});
   const [completedItems, setCompletedItems] = useState<{ [key: string]: { [key: string]: boolean } }>({});
-  const [score, setScore] = useState<number>(0);
-  const [showConfetti, setShowConfetti] = useState<boolean>(false);
+  const [showConfetti, setShowConfetti] = useState(false);
   const [achievements, setAchievements] = useState<string[]>([]);
-  
+  const [score, setScore] = useState(0);
+
   const currentCategory = categories.find(cat => cat.id === selectedCategory);
-  
-  // Set default active section based on current category
+
+  // Set default expanded section
   useEffect(() => {
     if (currentCategory && currentCategory.sections.length > 0) {
-      setActiveSection(currentCategory.sections[0].title);
+      // Find Week 3 section
+      const week3Section = currentCategory.sections.find(section => section.title.includes("Week 3"));
+      if (week3Section) {
+        setExpandedSections(prev => ({
+          ...prev,
+          [selectedCategory]: week3Section.title
+        }));
+      }
     }
-  }, [currentCategory]);
-  
+  }, [currentCategory, selectedCategory]);
+
   // Load progress from localStorage
   useEffect(() => {
     try {
-      const savedProgressKey = `genai-track-checkpoint1-${selectedCategory}-progress`;
+      const savedProgressKey = `genai-track-checkpoint2-${selectedCategory}-progress`;
       const savedProgress = localStorage.getItem(savedProgressKey);
       if (savedProgress) {
         const parsed = JSON.parse(savedProgress);
@@ -492,7 +335,7 @@ const GenAICheckpoint1 = () => {
           ...prev,
           [selectedCategory]: parsed
         }));
-        console.log(`Loaded GenAI Track Checkpoint 1 ${selectedCategory} progress:`, parsed);
+        console.log(`Loaded GenAI Track Checkpoint 2 ${selectedCategory} progress:`, parsed);
       }
     } catch (error) {
       console.error('Error loading progress from localStorage:', error);
@@ -503,11 +346,11 @@ const GenAICheckpoint1 = () => {
   useEffect(() => {
     if (currentCategory && completedItems[selectedCategory]) {
       try {
-        // Save progress to localStorage
-        const savedProgressKey = `genai-track-checkpoint1-${selectedCategory}-progress`;
+        // Save progress to localStorage with checkpoint identifier
+        const savedProgressKey = `genai-track-checkpoint2-${selectedCategory}-progress`;
         const dataToSave = JSON.stringify(completedItems[selectedCategory]);
         localStorage.setItem(savedProgressKey, dataToSave);
-        console.log(`Saved GenAI Track Checkpoint 1 ${selectedCategory} progress:`, completedItems[selectedCategory]);
+        console.log(`Saved GenAI Track Checkpoint 2 ${selectedCategory} progress:`, completedItems[selectedCategory]);
         
         // Calculate score
         const totalItems = currentCategory.sections.reduce((acc, section) => {
@@ -546,28 +389,42 @@ const GenAICheckpoint1 = () => {
     });
   };
 
+  const toggleSection = (sectionTitle: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [selectedCategory]: prev[selectedCategory] === sectionTitle ? '' : sectionTitle
+    }));
+  };
+
+  const toggleTopic = (topicId: string) => {
+    setExpandedTopics(prev => ({
+      ...prev,
+      [topicId]: !prev[topicId]
+    }));
+  };
+
   const getSectionProgress = (section: Section) => {
-    const totalItems = section.topics.reduce((acc, topic) => {
-      return acc + 
-        (topic.topics?.length || 0) + 
-        (topic.resources?.length || 0) + 
-        (topic.videos?.length || 0);
-    }, 0);
+    let total = 0;
+    let completed = 0;
 
-    const completedCount = section.topics.reduce((acc, topic) => {
-      return acc + 
-        (topic.topics?.filter(t => completedItems[selectedCategory]?.[t.id]).length || 0) +
-        (topic.resources?.filter(r => completedItems[selectedCategory]?.[r.id]).length || 0) +
-        (topic.videos?.filter(v => completedItems[selectedCategory]?.[v.id]).length || 0);
-    }, 0);
+    section.topics.forEach(topic => {
+      if (topic.topics) {
+        total += topic.topics.length;
+        completed += topic.topics.filter(t => completedItems[selectedCategory]?.[t.id]).length;
+      }
+      if (topic.resources) {
+        total += topic.resources.length;
+        completed += topic.resources.filter(r => completedItems[selectedCategory]?.[r.id]).length;
+      }
+    });
 
-    return totalItems > 0 ? Math.round((completedCount / totalItems) * 100) : 0;
+    return total > 0 ? (completed / total) * 100 : 0;
   };
 
   const renderContent = () => {
     if (!currentCategory) return null;
     
-    const section = currentCategory.sections.find(s => s.title === activeSection);
+    const section = currentCategory.sections.find(s => s.title === expandedSections[selectedCategory]);
     if (!section) return null;
 
     return (
@@ -814,7 +671,7 @@ const GenAICheckpoint1 = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500 bg-clip-text text-transparent"
             >
-              GenAI Track Checkpoint 1
+              GenAI Track Checkpoint 2
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0 }}
@@ -883,9 +740,9 @@ const GenAICheckpoint1 = () => {
                   key={section.title}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setActiveSection(section.title)}
+                  onClick={() => toggleSection(section.title)}
                   className={`w-full text-left p-4 rounded-xl mb-3 transition-all duration-300 ${
-                    activeSection === section.title
+                    expandedSections[selectedCategory] === section.title
                       ? 'bg-gradient-to-r from-orange-900/30 to-black border border-orange-800/30 shadow-lg'
                       : 'hover:bg-black/30'
                   }`}
@@ -896,7 +753,7 @@ const GenAICheckpoint1 = () => {
                       <span className="text-white font-medium">{section.title}</span>
                     </div>
                     <div className="text-gray-400">
-                      {activeSection === section.title ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                      {expandedSections[selectedCategory] === section.title ? <ChevronUpIcon /> : <ChevronDownIcon />}
                     </div>
                   </div>
                   <div className="mt-3">
@@ -935,4 +792,4 @@ const GenAICheckpoint1 = () => {
   );
 };
 
-export default GenAICheckpoint1; 
+export default GenAICheckpoint2; 
