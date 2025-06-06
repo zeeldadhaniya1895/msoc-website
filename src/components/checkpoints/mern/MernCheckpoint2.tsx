@@ -114,6 +114,41 @@ interface Category {
 
 const categories: Category[] = [
   {
+    id: "excuse-generator-project",
+    title: "Excuse Generator Project",
+    color: "#f97316",
+    sections: [
+      {
+        title: "Project Task",
+        icon: "🎭",
+        color: "#f97316",
+        topics: [
+          {
+            id: "excuse-generator",
+            title: "Excuse Generator App",
+            completed: false,
+            topics: [
+              {
+                id: "project-description",
+                text: '',
+                completed: false
+              }
+            ],
+            resources: [
+              {
+                id: "project-submission",
+                title: "Submit Your Project",
+                link: "https://forms.gle/z1xCjFaxeLViVCSn7",
+                description: "Click here to submit your project link",
+                completed: false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     id: "frontend-framework",
     title: "Frontend Framework (React + Redux)",
     color: "#f97316",
@@ -345,6 +380,17 @@ const MernCheckpoint2 = () => {
   
   const currentCategory = categories.find(cat => cat.id === selectedCategory);
   
+  // Auto-expand Project Task when Excuse Generator Project is selected
+  useEffect(() => {
+    const currentCat = categories.find(cat => cat.id === selectedCategory);
+    if (!currentCat) return;
+    if (selectedCategory === "excuse-generator-project") {
+      setActiveSection("Project Task");
+    } else if (currentCat.sections.length > 0) {
+      setActiveSection(currentCat.sections[0].title);
+    }
+  }, [selectedCategory]);
+
   // Calculate total progress
   const calculateTotalProgress = () => {
     if (!currentCategory) return 0;
@@ -489,7 +535,35 @@ const MernCheckpoint2 = () => {
                                 className="w-4 h-4 rounded border-orange-400 text-orange-600 focus:ring-orange-500 transition-all focus:ring-2"
                               />
                             </div>
-                            <span className={`${completedItems[item.id] ? 'text-green-400 line-through' : 'text-gray-300'} transition-all group-hover:text-white`}>{item.text}</span>
+                            {item.id === 'project-description' ? (
+                              <div className="space-y-3 text-base text-gray-200">
+                                <div className="font-bold text-lg mb-2">🎯 Project Challenge: Excuse Generator</div>
+                                <div className="mb-2">🚀 <b>Your Mission:</b> Build a quirky React app that generates hilarious excuses with just one click. Make it your own creative playground!</div>
+                                <div className="mb-1">✨ <b>Key Features:</b></div>
+                                <ul className="list-disc list-inside ml-4 mb-2">
+                                  <li>One-click excuse generation</li>
+                                  <li>Dynamic filtering by situation (college, dev-life, deadlines)</li>
+                                  <li>Emoji-powered drama</li>
+                                  <li>Easy copy-to-clipboard functionality</li>
+                                </ul>
+                                <div className="mb-1">💡 <b>Implementation Ideas:</b></div>
+                                <ul className="list-disc list-inside ml-4 mb-2">
+                                  <li>Store excuses in a JavaScript array</li>
+                                  <li>Or fetch from a fun excuse API</li>
+                                  <li>Add your own creative twist!</li>
+                                </ul>
+                                <div className="mb-1">🎨 <b>Design Freedom:</b></div>
+                                <ul className="list-disc list-inside ml-4 mb-2">
+                                  <li>Go wild with the UI</li>
+                                  <li>Add animations</li>
+                                  <li>Make it as dramatic as you want</li>
+                                  <li>Bonus points for extra chaos! 😉</li>
+                                </ul>
+                                <div className="mt-2">😊 <b>Remember:</b> This is your chance to have fun while learning React!</div>
+                              </div>
+                            ) : (
+                              <span className={`${completedItems[item.id] ? 'text-green-400 line-through' : 'text-gray-300'} transition-all group-hover:text-white`}>{item.text}</span>
+                            )}
                           </li>
                         ))}
                       </ul>
