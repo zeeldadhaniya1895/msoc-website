@@ -538,6 +538,15 @@ const MernCheckpoint2 = () => {
                             {item.id === 'project-description' ? (
                               <div className="space-y-3 text-base text-gray-200">
                                 <div className="font-bold text-lg mb-2">🎯 Project Challenge: Excuse Generator</div>
+                                <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-4">
+                                  <div className="flex items-center gap-2 text-red-400 font-bold">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                                    </svg>
+                                    Submission Deadline
+                                  </div>
+                                  <div className="text-white mt-1">8th June 2025, 11:59 PM</div>
+                                </div>
                                 <div className="mb-2">🚀 <b>Your Mission:</b> Build a quirky React app that generates hilarious excuses with just one click. Make it your own creative playground!</div>
                                 <div className="mb-1">✨ <b>Key Features:</b></div>
                                 <ul className="list-disc list-inside ml-4 mb-2">
