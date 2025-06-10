@@ -24,6 +24,7 @@ import MLandNLPRoadmap from './components/category/MLandNLP';
 import DjangoRoadmap from './components/category/Django';
 import MERNRoadmap from './components/category/MERN';
 import GenAIRoadmap from './components/category/GenAI';
+import MernCheckpoint3 from './components/checkpoints/mern/MernCheckpoint3';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path="/genai" element={<GenAIRoadmap />} />
             <Route path="/mern/checkpoint/1" element={<MernCheckpoint1 />} />
             <Route path="/mern/checkpoint/2" element={<MernCheckpoint2 />} />
+            <Route path="/mern/checkpoint/3" element={<MernCheckpoint3 />} />
             <Route path="/genai/checkpoint/1" element={<GenAICheckpoint1 />} />
             <Route path="/genai/checkpoint/2" element={<GenAICheckpoint2 />} />
 

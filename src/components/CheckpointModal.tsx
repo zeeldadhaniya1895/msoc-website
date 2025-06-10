@@ -77,13 +77,18 @@ const CheckpointModal = ({ isOpen, onClose, trackId }: CheckpointModalProps) => 
                     </svg>
                   </button>
                   
-                  <div className="w-full py-3 px-4 rounded-xl glass-card-light border border-gray-700/30 opacity-50 flex justify-between items-center">
+                  <button
+                    onClick={() => navigateToCheckpoint(3)}
+                    className="w-full py-3 px-4 rounded-xl glass-card-light border border-primary/30 hover:border-primary transition flex justify-between items-center"
+                  >
                     <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-full bg-gray-700/20 flex items-center justify-center text-lg">3</div>
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-lg">3</div>
                       <span className="font-bold text-white">Checkpoint 3</span>
                     </div>
-                    <span className="text-sm text-gray-400">Coming Soon</span>
-                  </div>
+                    <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
 
                 <div className="mt-6 flex justify-end">
