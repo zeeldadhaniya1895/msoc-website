@@ -192,6 +192,91 @@ const categories: Category[] = [
             ]
           }
         ]
+      },
+      {
+        title: "Week 4: Model Context Protocol",
+        icon: "🔗",
+        color: "#f97316",
+        topics: [
+          {
+            id: "mcp-basics",
+            title: "Understanding MCP",
+            completed: false,
+            topics: [
+              { id: "mcp-intro", text: "What is MCP and its importance", completed: false }
+            ],
+            resources: [
+              {
+                id: "mcp-intro-video",
+                title: "Understanding MCP",
+                link: "https://www.youtube.com/watch?v=vYelTr1uQmA",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "mcp-integration",
+            title: "MCP Integration",
+            completed: false,
+            topics: [
+              { id: "claude-integration", text: "Integrating MCP with Claude", completed: false },
+              { id: "vscode-integration", text: "Integrating MCP with VSCode", completed: false }
+            ],
+            resources: [
+              {
+                id: "claude-mcp-video",
+                title: "Integrating MCP in Claude",
+                link: "https://www.youtube.com/watch?v=byzes2k-xaU",
+                completed: false
+              },
+              {
+                id: "vscode-mcp-video",
+                title: "Integrating MCP in VSCode",
+                link: "https://www.youtube.com/watch?v=iS25RFups4A",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "mcp-servers",
+            title: "MCP Servers",
+            completed: false,
+            topics: [
+              { id: "explore-servers", text: "Exploring different MCP servers", completed: false },
+              { id: "create-server", text: "Creating your own MCP server", completed: false }
+            ],
+            resources: [
+              {
+                id: "mcp-servers-link",
+                title: "Explore MCP Servers",
+                link: "https://mcpservers.org/",
+                completed: false
+              },
+              {
+                id: "create-server-video",
+                title: "How to make our own MCP Server",
+                link: "https://www.youtube.com/watch?v=bWFWeolDGcM",
+                completed: false
+              }
+            ]
+          },
+          {
+            id: "mcp-advanced",
+            title: "Advanced MCP Project",
+            completed: false,
+            topics: [
+              { id: "advanced-project", text: "Advanced MCP implementation project", completed: false }
+            ],
+            resources: [
+              {
+                id: "advanced-project-video",
+                title: "Advanced MCP Project",
+                link: "https://www.youtube.com/watch?v=Q50jSglX0hA",
+                completed: false
+              }
+            ]
+          }
+        ]
       }
     ]
   },
